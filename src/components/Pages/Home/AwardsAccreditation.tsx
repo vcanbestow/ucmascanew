@@ -5,10 +5,16 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import Image from 'next/image';
 
 import React, { useEffect, useState, useRef } from 'react';
+ 
+interface CounterProps {
+    from?: number;
+    to: number;
+    decimals?: number;
+}
 
 // Animated Counter Sub-Component
-function Counter({ from = 0, to, decimals = 0 }) {
-    const nodeRef = useRef(null);
+function Counter({ from = 0, to, decimals = 0 }: CounterProps) {
+    const nodeRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         const node = nodeRef.current;
@@ -27,7 +33,6 @@ function Counter({ from = 0, to, decimals = 0 }) {
 
     return <span ref={nodeRef}>{from}</span>;
 }
-
 export default function AwardsAccreditation() {
     const [mounted, setMounted] = useState(false);
 
