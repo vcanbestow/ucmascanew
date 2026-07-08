@@ -212,7 +212,7 @@ export default function Header() {
               <div className="absolute right-0 top-full pt-1 z-50">
                 <div className="w-32 bg-white rounded shadow-lg border border-gray-400 py-2 flex flex-col gap-2 overflow-hidden">
                   <Button
-                    variant=""
+                    variant="unset"
                     href="#"
                     iconPosition="right"
                     className="mx-auto"
@@ -220,7 +220,7 @@ export default function Header() {
                     English
                   </Button>
                   <Button
-                    variant=""
+                    variant="unset"
                     href="#"
                     iconPosition="right"
                     className="mx-auto"
