@@ -87,16 +87,17 @@ export default function FlagshipPrograms() {
     const [activeTab, setActiveTab] = useState(0);
 
     // Step 1: Normal state change on click
-    const handleTabClick = (index, isMobile = false) => {
-        if (isMobile) {
-            setActiveTab(activeTab === index ? -1 : index);
-        } else {
-            setActiveTab(index);
-        }
-    };
+    // Step 1: Normal state change on click
+const handleTabClick = (index: number, isMobile: boolean = false) => {
+    if (isMobile) {
+        setActiveTab(activeTab === index ? -1 : index);
+    } else {
+        setActiveTab(index);
+    }
+};
 
     // Step 2: Smooth scroll triggers ONLY after expansion transition completes
-    const handleTransitionEnd = (index, event) => {
+   const handleTransitionEnd = (index: number, event: React.TransitionEvent) => {
         // Ensure we only look at the height/max-height transition ending
         if (event.propertyName === "max-height" && activeTab === index) {
             const element = document.getElementById(`accordion-${index}`);

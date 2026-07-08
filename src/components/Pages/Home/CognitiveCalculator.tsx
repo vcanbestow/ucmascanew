@@ -21,21 +21,14 @@ export default function CognitiveCalculator() {
   const totalSlides = 3;
   const minAge = 5;
   const maxAge = 15;
-
-  /* ========================================================================
-    BOTTOM-TO-TOP INCREMENT MATH LOGIC
-    ========================================================================
-    HTML5 range inputs elements elements visually fill left-to-right. 
-    When we rotate -270deg, left maps to BOTTOM and right maps to TOP.
-    To make sliding towards TOP increase the number, we invert the raw value:
-  */
-  const handleSliderChange = (e) => {
-    const nativeValue = parseInt(e.target.value);
-    // Invert calculation so pushing up increases value
-    const bottomToTopValue = maxAge + minAge - nativeValue;
-    setAge(bottomToTopValue);
-  };
-
+ 
+ 
+const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const nativeValue = parseInt(e.target.value);
+  // Invert calculation so pushing up increases value
+  const bottomToTopValue = maxAge + minAge - nativeValue;
+  setAge(bottomToTopValue);
+};
   // Visual tracking math for tailwind fill calculation background 
   const sliderPercentage = ((age - minAge) / (maxAge - minAge)) * 100;
   const nativeInputValue = maxAge + minAge - age;

@@ -3,7 +3,7 @@
 
 import SectionTitle from "@/components/UI/SectionTitle";
 import Image from 'next/image';
-
+import { animate } from "framer-motion";
 import React, { useEffect, useState, useRef } from 'react';
  
 interface CounterProps {

@@ -411,8 +411,14 @@ const TAB_DATA = [
   },
 ];
 
-const VideoModal = ({ isOpen, onClose, videoUrl }) => {
-  if (!isOpen) return null;
+interface VideoModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    videoUrl: string;
+}
+
+const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
+    if (!isOpen) return null;
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
@@ -443,16 +449,16 @@ const VideoModal = ({ isOpen, onClose, videoUrl }) => {
 
 export default function DynamicTabSection() {
   const [activeTabId, setActiveTabId] = useState(TAB_DATA[0].id);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const accordionRefs = useRef({});
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false); 
+const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const activeIndex = TAB_DATA.findIndex((item) => item.id === activeTabId);
   const activeData = TAB_DATA[activeIndex];
 
-  const handleAccordionClick = (id) => {
+  const handleAccordionClick = (id: string) => {
     setActiveTabId(id);
     setTimeout(() => {
-      const element = accordionRefs.current[id];
+      const element = (accordionRefs.current as Record<string | number, HTMLDivElement | null>)[id];
       if (element) {
         // Scroll with 5rem (80px) offset from top
         const top = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -595,8 +601,8 @@ export default function DynamicTabSection() {
           <div className="xl:hidden flex flex-col gap-4">
             {TAB_DATA.map((item) => (
               <div
-                key={item.id}
-                ref={(el) => (accordionRefs.current[item.id] = el)}
+                key={item.id} 
+                ref={(el) => {accordionRefs.current[item.id] = el; }}
               >
                 <button
                   onClick={() => handleAccordionClick(item.id)}
@@ -646,22 +652,25 @@ export default function DynamicTabSection() {
   );
 }
 
-function ContentArea({ activeData, setIsVideoModalOpen }) {
-  const getColorProps = (value) => {
-    // Check if it's a Tailwind class (usually starts with a letter like 't', 'b', 'f'
-    // but avoiding hex codes which start with '#')
+interface ContentAreaProps {
+  activeData: typeof TAB_DATA[number];
+  setIsVideoModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
+  // value: string डिफाइन किया
+  const getColorProps = (value: string) => {
     const isTailwind =
       value &&
       typeof value === "string" &&
       !value.startsWith("#") &&
       !value.startsWith("rgba");
-
     return {
       className: isTailwind ? value : "",
       style: !isTailwind ? { color: value } : {},
     };
   };
-  const getBgProps = (value) => {
+  const getBgProps = (value: string) => {
     const isTailwind =
       value && typeof value === "string" && value.startsWith("bg-");
 
@@ -670,7 +679,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }) {
       style: !isTailwind ? { backgroundColor: value } : {},
     };
   };
-  const getTextProps = (value) => {
+  const getTextProps = (value: string) => {
     const isTailwind =
       value && typeof value === "string" && value.startsWith("text-");
 
