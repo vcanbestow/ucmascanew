@@ -25,8 +25,8 @@ export default function Home() {
       <FlagshipPrograms />
       <CtaSection />
       <UpcomingWorkshops />
-      <FranchiseSection />
-      <AwardsAccreditation />
+      {/* <FranchiseSection />
+      <AwardsAccreditation /> */}
     </>
   );
 }
