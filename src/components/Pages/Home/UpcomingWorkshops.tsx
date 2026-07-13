@@ -8,6 +8,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Button from "@/components/UI/Button";
 import { MoveRight } from "lucide-react";
+import { path } from "@/utils/path"; // Import the path utility
 // Import all required Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,7 +31,7 @@ const workshopData: Workshop[] = [
     title: "Summer Workshop",
     description:
       "Fun-filled activities that strengthen math skills and prevent summer slide during the summer break.",
-    image: "/images/Event Image 1.webp",
+    image: "Event Image 1.webp",
     dateText: "June 14-15, 2026",
     dayBadge: "14",
     location: "Toronto, ON",
@@ -41,7 +42,7 @@ const workshopData: Workshop[] = [
     title: "Back-to-School Workshop",
     description:
       "Introductory workshop to give first-hand experience of Abacus math calculations before the academic year begins.",
-    image: "/images/Event Image 2.webp",
+    image: "Event Image 2.webp",
     dateText: "June 14-15, 2026",
     dayBadge: "14",
     location: "Toronto, ON",
@@ -52,7 +53,7 @@ const workshopData: Workshop[] = [
     title: "Santa Math Workshop",
     description:
       "A festive learning experience where children enjoy holiday-themed math games, activities, and challenges.",
-    image: "/images/Event Image 3.webp",
+    image: "Event Image 3.webp",
     dateText: "June 14-15, 2026",
     dayBadge: "14",
     location: "Toronto, ON",
@@ -64,7 +65,7 @@ const workshopData: Workshop[] = [
     description:
       "STEM-based learning camp where kids learn to design & build their own robotic models.",
     image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
+      "event-4.webp",
     dateText: "July 21-23, 2026",
     dayBadge: "21",
     location: "Toronto, ON",
@@ -176,7 +177,7 @@ export default function UpcomingWorkshops() {
                         width={600}
                         height={800}
                         quality={100}
-                        src={workshop.image}
+                        src={`${path}/images/${workshop.image}`}
                         alt={workshop.title}
                         className="w-full h-full object-cover group group-hover:scale-105 transition"
                         loading="lazy"

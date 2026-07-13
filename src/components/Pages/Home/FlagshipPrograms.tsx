@@ -5,26 +5,26 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import { MoveRight } from "lucide-react"; // Ensure lucide-react is installed
 import Image from 'next/image';
-
+import { path } from "@/utils/path"; // Import the path utility
 // Dynamic Data Array
 const PROGRAM_DATA = [
     {
         id: "age3-6",
         ageGroup: "Age 3-6",
         childImage: {
-            src: "/images/Age 3-6 child.webp",
+            src: "Age 3-6 child.webp",
             alt: "Child with backpack",
         },
         cards: [
             {
-                logo: "/images/i-Maths Logo B.webp",
+                logo: "i-Maths Logo B.webp",
                 alt: "i-Maths Logo",
                 title: "Early\nMath",
                 link: "#",
                 buttonText: "Know More",
             },
             {
-                logo: "/images/A2Z_English_Blue.webp",
+                logo: "A2Z_English_Blue.webp",
                 alt: "A2Z English Logo",
                 title: "Comprehensive\nEnglish",
                 link: "#",
@@ -36,12 +36,12 @@ const PROGRAM_DATA = [
         id: "age6-8",
         ageGroup: "Age 6-8",
         childImage: {
-            src: "/images/Age 6-8 child.webp",
+            src: "Age 6-8 child.webp",
             alt: "Girl looking back",
         },
         cards: [
             {
-                logo: "/images/UCMAS logo.webp",
+                logo: "UCMAS logo.webp",
                 alt: "UCMAS Logo",
                 tag: "Junior",
                 title: "Basics of\nAbacus",
@@ -49,7 +49,7 @@ const PROGRAM_DATA = [
                 buttonText: "Know More",
             },
             {
-                logo: "/images/Obots Nano.webp",
+                logo: "Obots Nano.webp",
                 alt: "OBOTZ Logo",
                 title: "Basics of\nSTEM",
                 link: "#",
@@ -61,19 +61,19 @@ const PROGRAM_DATA = [
         id: "age9",
         ageGroup: "Age 9+",
         childImage: {
-            src: "/images/Age 9+ child.webp",
+            src: "Age 9+ child.webp",
             alt: "Two older children",
         },
         cards: [
             {
-                logo: "/images/UCMAS logo.webp",
+                logo: "UCMAS logo.webp",
                 alt: "UCMAS Logo",
                 title: "Abacus\nMental Math",
                 link: "#",
                 buttonText: "Know More",
             },
             {
-                logo: "/images/Obotz Logo Blue Tagline.webp",
+                logo: "Obotz Logo Blue Tagline.webp",
                 alt: "OBOTZ Logo",
                 title: "Robotics &\nCoding",
                 link: "#",
@@ -193,7 +193,8 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                         <div className="order-1 w-full xl:w-9/12 mx-auto"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                                             <div className="flex flex-col items-center text-center p-5 lg:p-7 bg-flagship-program-box-bg border border-orange-bg rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-auto md:min-h-70 md:mb-6   justify-center w-full">
                                                 <div className="h-20 flex items-center justify-center mb-1">
-                                                    <Image width={400} height={400} quality={100} src={tab.cards[0].logo} alt={tab.cards[0].alt} className="h-20 max-w-36 object-contain" />
+                                                    <Image width={400} height={400} quality={100} 
+                                                    src={`${path}/images/${tab.cards[0].logo}`} alt={tab.cards[0].alt} className="h-20 max-w-36 object-contain" />
                                                 </div>
                                                 {tab.cards[0].tag && (
                                                     <span className="text-xs font-semibold text-[#3e4095] tracking-wide -mt-4 mb-3">
@@ -220,7 +221,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                                 <Image
                                                     width={600}
                                                     height={800} quality={100}
-                                                    src={tab.childImage.src}
+                                                    src={`${path}/images/${tab.childImage.src}`}
                                                     alt={tab.childImage.alt}
                                                     className="max-w-full max-h-[28rem] object-contain"
                                                 />
@@ -234,7 +235,8 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                                     <Image
                                                         width={600}
                                                         height={800} quality={100}
-                                                        src={tab.cards[1].logo} alt={tab.cards[1].alt} className="h-20 max-w-36 object-contain" />
+                                                        src={`${path}/images/${tab.cards[1].logo}`} 
+                                                        alt={tab.cards[1].alt} className="h-20 max-w-36 object-contain" />
 
                                                 </div>
                                                 <h3 className="text-xl lg:text-xl font-semibold text-ucmas-blue mb-3 mt-6 whitespace-pre-line leading-tight">

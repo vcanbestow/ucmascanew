@@ -16,28 +16,28 @@ const slides = [
         id: 1,
         title: "Welcome to Our Modern Website",
         description: "Experience the power of Next.js and Tailwind CSS working perfectly together.",
-        image: "/images/Banner-15.webp",
+        image: "Banner-15.webp",
         btnText: "Get Started"
     },
     {
         id: 2,
         title: "Fast, Secure, and Scalable",
         description: "Built with the latest App Router, React Compiler, and advanced UI components.",
-        image: "/images/Banner-17.webp",
+        image: "Banner-17.webp",
         btnText: "Learn More"
     },
     {
         id: 3,
         title: "Custom Brand Colors Setup",
         description: "Easily integrate your UCMAS colors with Tailwind CSS v4 seamlessly.",
-        image: "/images/Banner-18.webp",
+        image: "Banner-18.webp",
         btnText: "View Colors"
     },
     {
         id: 4,
         title: "Custom Brand Colors Setup",
         description: "Easily integrate your UCMAS colors with Tailwind CSS v4 seamlessly.",
-        image: "/images/Banner-19.webp",
+        image: "Banner-19.webp",
         btnText: "View Colors"
     }
 ];
@@ -87,7 +87,7 @@ export default function BannerSlider() {
                     <SwiperSlide key={slide.id}>
                         <div className="relative w-full">
                             <Image
-                                src={`${path}${slide.image}`}
+                                src={`${path}/images/${slide.image}`}
                                 alt="Slide Image"
                                 width={1920}
                                 height={600}

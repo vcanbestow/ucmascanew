@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import { MoveRight, Play, Pause } from "lucide-react"; // Added Play/Pause icons for the video UI
-
+import { path } from "@/utils/path"; // Import the path utility
 export default function CtaVideoHero() {
     const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,10 +35,10 @@ export default function CtaVideoHero() {
                         className="w-full h-full object-cover  aspect-video transition-all duration-300"
                         loop
                         playsInline
-                        poster="/images/Banner-cta-bg.webp"
+                        poster={`${path}/images/Banner-cta-bg.webp`}
                         onClick={togglePlay}
                     >
-                        <source src="/images/UCMAS International Competition 2019.mp4" type="video/mp4" />
+                        <source src={`${path}/images/UCMAS International Competition 2019.mp4`} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
 

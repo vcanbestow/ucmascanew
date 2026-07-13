@@ -4,6 +4,7 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import Link from "next/link";
 import Image from "next/image";
+import { path } from "@/utils/path"; // Import the path utility
 import {
   Brain,
   Crosshair,

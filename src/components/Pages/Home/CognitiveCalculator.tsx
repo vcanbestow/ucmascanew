@@ -3,7 +3,7 @@
 import SectionTitle from "@/components/UI/SectionTitle";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-
+import { path } from "@/utils/path";
 
 export default function CognitiveCalculator() {
   const [mounted, setMounted] = useState(false);
@@ -95,8 +95,8 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               <div className="absolute left-[-2.8125rem] lg:left-[-6.125rem] xl:left-[-5.5rem] 2xl:left-[-5.3125rem] bottom-6 h-[75%] max-h-[17.5rem] md:max-h-[21.25rem] 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
                 <Image
                   width={400}
-                  height={500}
-                  src="/images/Child Left.webp"
+                  height={500} 
+                  src={`${path}/images/Child Left.webp`}
                   alt="Girl Left"
                   className="h-full w-auto object-contain object-bottom"
                   priority  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"
@@ -243,7 +243,9 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
                 <Image
                   width={400}
                   height={500}
-                  src="/images/Child Right.webp"
+                  
+                  src={`${path}/images/Child Right.webp`}
+
                   alt="Girl Right"
                   className="h-full w-auto object-contain object-bottom"
                   priority

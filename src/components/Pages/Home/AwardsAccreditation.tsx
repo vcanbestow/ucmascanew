@@ -4,6 +4,7 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import Image from 'next/image';
 import { animate } from "framer-motion";
 import React, { useEffect, useState, useRef } from 'react';
+import { path } from "@/utils/path";
 
 interface CounterProps {
     from?: number;
@@ -41,13 +42,13 @@ export default function AwardsAccreditation() {
     }, []);
 
     const statsData = [
-        { image: "/images/Layer 1.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "/images/Layer 2.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "/images/Layer 3.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "/images/Layer 4.webp", year: "2024", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "/images/Layer 5.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "/images/Layer 6.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "/images/Layer 7.webp", year: "2016", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 1.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 2.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 3.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 4.webp", year: "2024", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 5.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 6.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 7.webp", year: "2016", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
     ];
 
     if (!mounted) return null;
@@ -98,8 +99,8 @@ export default function AwardsAccreditation() {
                                     >
                                         <div className="text-center">
                                             <div className="h-32 flex items-center justify-center mb-5">
-                                                <Image
-                                                    src={stat.image}
+                                                <Image 
+                                                    src={`${path}/images/${stat.image}`}
                                                     alt={stat.content}
                                                     width={120}
                                                     height={120}
