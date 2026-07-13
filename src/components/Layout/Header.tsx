@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
-import { asset } from '@/utils/path';
+import { path } from '@/utils/path';
 
 import Link from "next/link";
 import {
@@ -158,7 +158,7 @@ export default function Header() {
       <nav className="hidden my-container xl:flex items-center justify-between py-4">
         <Link href="/" className="shrink-0 mr-8 ">
           <div className="flex items-center justify-center">
-            <Image src={asset("/images/logo-1.webp")} alt="UCMAS Logo" width={140} height={45} className="h-14 w-auto" />
+            <Image src={`${path}/images/logo-1.webp`} alt="UCMAS Logo" width={140} height={45} className="h-14 w-auto" />
           </div>
         </Link>
 
