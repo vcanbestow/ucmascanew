@@ -21,7 +21,7 @@ export default function Home() {
 
       </div>
       <ParentsWorryAbout />
-      <CognitiveCalculator />
+      <CognitiveCalculator /> 
       <FlagshipPrograms />
       <CtaSection />
       <UpcomingWorkshops />
