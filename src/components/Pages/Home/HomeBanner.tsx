@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from 'next/image';
 import Button from '@/components/UI/Button';
+import { path } from '@/utils/path';
 
 const slides = [
     {
@@ -86,7 +87,7 @@ export default function BannerSlider() {
                     <SwiperSlide key={slide.id}>
                         <div className="relative w-full">
                             <Image
-                                src={slide.image}
+                                src={`${path}${slide.image}`}
                                 alt="Slide Image"
                                 width={1920}
                                 height={600}

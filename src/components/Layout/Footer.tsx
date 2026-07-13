@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image';
+import { path } from "@/utils/path";
 
 export default function Footer() {
     return (
@@ -12,7 +13,8 @@ export default function Footer() {
                     <div className="lg:col-span-5 flex flex-col gap-6">
                         {/* Logo Placeholder */}
                         <div className="">
-                            <Image src="/images/UCMAS-logo.png"
+                            <Image   
+                            src={`${path}/images/logo-1.webp`}
                                 alt="UCMAS Logo"
                                 width={500}
                                 height={500}
