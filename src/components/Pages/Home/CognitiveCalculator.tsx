@@ -21,14 +21,14 @@ export default function CognitiveCalculator() {
   const totalSlides = 3;
   const minAge = 5;
   const maxAge = 15;
- 
- 
-const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const nativeValue = parseInt(e.target.value);
-  // Invert calculation so pushing up increases value
-  const bottomToTopValue = maxAge + minAge - nativeValue;
-  setAge(bottomToTopValue);
-};
+
+
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nativeValue = parseInt(e.target.value);
+    // Invert calculation so pushing up increases value
+    const bottomToTopValue = maxAge + minAge - nativeValue;
+    setAge(bottomToTopValue);
+  };
   // Visual tracking math for tailwind fill calculation background 
   const sliderPercentage = ((age - minAge) / (maxAge - minAge)) * 100;
   const nativeInputValue = maxAge + minAge - age;
@@ -72,13 +72,13 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             subtitle={[
               <>
                 When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.
-                <br /> 
-                <br className="hidden md:block" /> 
+                <br />
+                <br className="hidden md:block" />
                 Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.
               </>
             ]}
             titleColor="text-ucmas-blue"
-            highlightColor="text-ucmas-sky" 
+            highlightColor="text-ucmas-sky"
             subtitleColor="text-section-heading-paragraph lg:columns-2 gap-10 text-justify leading-[1.8]"
             lineColor="#1e2e54"
           />
@@ -95,11 +95,11 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               <div className="absolute left-[-2.8125rem] lg:left-[-6.125rem] xl:left-[-5.5rem] 2xl:left-[-5.3125rem] bottom-6 h-[75%] max-h-[17.5rem] md:max-h-[21.25rem] 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
                 <Image
                   width={400}
-                  height={500} 
+                  height={500}
                   src={`${path}/images/Child Left.webp`}
                   alt="Girl Left"
                   className="h-full w-auto object-contain object-bottom"
-                  priority  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"
+                  priority data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"
                 />
               </div>
 
@@ -108,12 +108,12 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               {/* LEFT SECTION INFO PANEL */}
               <div className="w-full md:w-[52%] md:pr-7 md:border-r border-white/10 flex flex-col text-center md:text-left items-center md:items-start pb-8 md:pb-0 justify-center">
                 <h2 className="text-3xl lg:text-4xl font-extrabold w-full text-white leading-[1.15] mb-4 tracking-wide break-words hyphens-auto" lang="en">
-  Get Personalized Learning Recommendations
-</h2>
+                  Get Personalized Learning Recommendations
+                </h2>
                 <h2 className="text-2xl font-extrabold text-white leading-[1.15] mb-4 tracking-wide">
                   Test Your Child's  <br className="hidden lg:block" /> Cognitive Strengths
                 </h2>
-                <p className="text-xs lg:text-base text-white/60 leading-relaxed max-w-sm">
+                <p className="text-xs lg:text-base text-white/60 leading-relaxed max-w-sm break-words hyphens-auto">
                   3 questions. 60 seconds. A Free personalised recommendation for your child.
                 </p>
               </div>
@@ -243,13 +243,13 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
                 <Image
                   width={400}
                   height={500}
-                  
+
                   src={`${path}/images/Child Right.webp`}
 
                   alt="Girl Right"
                   className="h-full w-auto object-contain object-bottom"
                   priority
-                  quality={100}  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
+                  quality={100} data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
                 />
               </div>
             </div>
