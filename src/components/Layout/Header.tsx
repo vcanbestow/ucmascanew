@@ -242,7 +242,7 @@ export default function Header() {
         <div className="flex items-center justify-between p-4 bg-white">
           <Link href="/" className="focus:outline-none">
             <div className="w-auto h-11.25 flex items-center justify-center rounded">
-              <Image src="/images/logo-1.webp" alt="UCMAS Logo" width={140} height={45} className="object-contain" />
+              <Image src={`${path}/images/logo-1.webp`} alt="UCMAS Logo" width={140} height={45} className="object-contain" />
             </div>
           </Link>
           {!isMobileMenuOpen && (
