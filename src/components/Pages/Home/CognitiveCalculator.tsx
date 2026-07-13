@@ -107,9 +107,9 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
               {/* LEFT SECTION INFO PANEL */}
               <div className="w-full md:w-[52%] md:pr-7 md:border-r border-white/10 flex flex-col text-center md:text-left items-center md:items-start pb-8 md:pb-0 justify-center">
-                <h2 className="text-3xl lg:text-4xl font-extrabold w-full text-white leading-[1.15] mb-4 tracking-wide">
-                 Get Personalized Learning Recomme ndations
-                </h2>
+                <h2 className="text-3xl lg:text-4xl font-extrabold w-full text-white leading-[1.15] mb-4 tracking-wide break-words hyphens-auto" lang="en">
+  Get Personalized Learning Recommendations
+</h2>
                 <h2 className="text-2xl font-extrabold text-white leading-[1.15] mb-4 tracking-wide">
                   Test Your Child's  <br className="hidden lg:block" /> Cognitive Strengths
                 </h2>
