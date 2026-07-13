@@ -1,0 +1,39 @@
+name: Deploy Next.js via FTP
+
+on:
+  push:
+    branches:
+      - main  # Agar aapki main branch ka naam 'master' hai, toh yahan master likhein
+
+jobs:
+  web-deploy:
+    name: Build and Deploy website
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. GitHub repository se latest code pull karna
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      # 2. Node.js environment setup karna
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Packages install karna aur project build karna
+      - name: Install dependencies & Build
+        run: |
+          npm ci
+          npm run build
+
+      # 4. Built files ko FTP ke zariye server par daalna
+      - name: Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /public_html/ucmasnext/  # Yahan aapke server ka FTP path aayega
