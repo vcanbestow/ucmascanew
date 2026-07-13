@@ -166,7 +166,7 @@ export default function FranchiseSection() {
             <div className="relative z-10 flex items-center flex-col-reverse xl:flex-col   ">
 
                 {/* LEFT COLUMN: Woman Image (Spans 4 cols) */}
-                <div className="h-full xl:h-4/5 2xl:h-10/12 3xl:h-full  xl:absolute bottom-0 left-0  pointer-events-none  ">
+                <div className="h-full xl:h-4/5 2xl:h-10/12 3xl:h-full  xl:absolute bottom-0 left-0  pointer-events-none  "  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                     <Image
                         width={1200}
                         height={2400}
@@ -178,10 +178,10 @@ export default function FranchiseSection() {
                 </div>
 
                 <div className="my-container  grid grid-cols-1 xl:grid-cols-12 gap-10 lg:gap-6 items-stretch pb-10 lg:pb-16">
-                    <div className="xl:col-span-2 flex flex-col md:flex-row  justify-center mb-5 xl:flex-col xl:col-start-4 items-center   ">
+                    <div className="xl:col-span-2 flex flex-col md:flex-row  justify-center mb-5 xl:flex-col xl:col-start-4 items-center"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                         {statsData.map((stat, index) => (
                             <div key={stat.id} className="relative flex flex-col md:flex-row xl:flex-col items-center text-center w-full">
-                                <div>
+                                <div  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                     <h3 className="text-5xl font-bold text-ucmas-counter-franchise-yellow leading-none tracking-tight drop-shadow-md">
                                         <AnimatedNumber
                                             end={stat.value}
@@ -206,9 +206,9 @@ export default function FranchiseSection() {
                         ))}
                     </div>
 
-                    <div className="xl:col-span-7 xl:ps-16 xl:col-start-6 flex flex-col justify-center  w-full pb-10 lg:pb-0 z-20">
+                    <div className="xl:col-span-7 xl:ps-16 xl:col-start-6 flex flex-col justify-center  w-full pb-10 lg:pb-0 z-20"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                         {/* 2x2 Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full" >
                             {franchiseeData.map((person) => (
                                 <div
                                     key={person.id}
@@ -216,14 +216,14 @@ export default function FranchiseSection() {
                                     className="cursor-pointer group rounded-2xl border border-[#3b4c75] overflow-hidden shadow-lg flex flex-col transition-transform hover:scale-[1.02] duration-300"
                                 >
                                     {/* Image Section */}
-                                    <div className="h-52 w-full overflow-hidden relative">
+                                    <div className=" w-full overflow-hidden relative">
                                         <Image
                                             width={600}
                                             height={800}
                                             quality={100}
                                             src={person.image}
                                             alt={person.name}
-                                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                                            className="w-full h-full transition-transform duration-500 group-hover:scale-110"
                                             loading="lazy"
                                         />
                                         {/* Play Button Overlay */}
@@ -237,10 +237,10 @@ export default function FranchiseSection() {
                                     {/* Content Section */}
                                     <div className="px-5 relative bg-ucmas-franchise-bluebox py-6 flex flex-row justify-between items-end flex-grow after:absolute after:inset-0 after:content-[''] after:bg-gradient-to-b after:from-black/50 after:to-transparent">
                                         <div className="flex flex-col pr-2 z-10">
-                                            <h4 className="text-ucmas-counter-franchise-yellow font-semibold text-xl leading-snug group-hover:text-white transition-colors">
+                                            <h4 className="text-ucmas-counter-franchise-yellow font-ucmasfont font-bold text-xl leading-snug group-hover:text-white transition-colors">
                                                 {person.name}
                                             </h4>
-                                            <p className="text-slate-300 italic mt-0.5 font-medium">
+                                            <p className="text-slate-300 font-ucmasfont mt-0.5  ">
                                                 {person.location}
                                             </p>
                                         </div>
@@ -260,8 +260,8 @@ export default function FranchiseSection() {
                         {/* CTA Button - Right Aligned below grid */}
                         <div className="flex justify-center xl:justify-end w-full mt-6">
                             <Button
-                                variant="secondary"
-                                href="/contact"
+                                variant="yellow_btn"
+                                href="#"
                                 icon={<MoveRight size={20} strokeWidth={2} />}
                                 iconPosition="right"
                                 className=" !py-1  font-semibold"

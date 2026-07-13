@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import SectionTitle from "@/components/UI/SectionTitle";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import Link from "next/link";
+import Image from "next/image";
 import {
   Brain,
   Crosshair,
@@ -412,13 +413,13 @@ const TAB_DATA = [
 ];
 
 interface VideoModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    videoUrl: string;
+  isOpen: boolean;
+  onClose: () => void;
+  videoUrl: string;
 }
 
 const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
-    if (!isOpen) return null;
+  if (!isOpen) return null;
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
@@ -449,8 +450,8 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
 
 export default function DynamicTabSection() {
   const [activeTabId, setActiveTabId] = useState(TAB_DATA[0].id);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false); 
-const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const activeIndex = TAB_DATA.findIndex((item) => item.id === activeTabId);
   const activeData = TAB_DATA[activeIndex];
@@ -601,8 +602,8 @@ const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
           <div className="xl:hidden flex flex-col gap-4">
             {TAB_DATA.map((item) => (
               <div
-                key={item.id} 
-                ref={(el) => {accordionRefs.current[item.id] = el; }}
+                key={item.id}
+                ref={(el) => { accordionRefs.current[item.id] = el; }}
               >
                 <button
                   onClick={() => handleAccordionClick(item.id)}
@@ -696,7 +697,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
   const paragraphProps = getColorProps(content.paragraphColor);
 
   return (
-    <div className="grid lg:grid-cols-12  gap-8 md:gap-12 items-center">
+    <div className="grid lg:grid-cols-12  gap-8 md:gap-12 items-center" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
       <div className="lg:col-span-7">
         <div className="  lg:mb-14 mb-6">
           <h2 className=" mb-3 text-2xl md:text-3xl font-extrabold leading-tight">
@@ -791,7 +792,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
             View All Events
           </Button> */}
           <Button
-            href=""
+            href="#"
             className={`${getBgProps(content.button.bgColor).className} ${getTextProps(content.button.textColor).className} px-8 py-2 group font-semibold border-none mx-auto rounded-[.45rem] transition-all duration-300`}
             style={{
               ...getBgProps(content.button.bgColor).style,
@@ -826,13 +827,15 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
       </div>
       <div
         className="relative lg:col-span-5 xl:col-span-4 xl:col-start-9 2xl:col-span-3 2xl:col-start-10 group cursor-pointer w-full max-w-xl mx-auto"
-        onClick={() => setIsVideoModalOpen(true)}
+        onClick={() => setIsVideoModalOpen(true)} data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
       >
         <div className="relative rounded-3xl lg:h-96 lg:min-h-96 overflow-hidden aspect-[4/3] w-full">
-          <img
+          <Image
             src={activeData.content.video.thumbnail}
             alt="Video"
             className="w-full h-full object-cover"
+             width={140} height={45}
+             quality={100}
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">

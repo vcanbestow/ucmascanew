@@ -93,7 +93,7 @@ export default function StatsSlider() {
     if (!mounted) return null;
 
     return (
-        <div ref={sectionRef} className="overflow-hidden py-3 -mt-3 md:py-5 md:-my-5 relative">
+        <div ref={sectionRef} className="overflow-hidden py-3 -mt-3 md:py-5 md:-my-5 relative" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <style>{`
                 @keyframes marquee {
                     0% { transform: translateX(0); }
@@ -143,7 +143,7 @@ export default function StatsSlider() {
                                         )}
                                     </div>
 
-                                    <div className="xl:text-xl text-base font-regular text-white leading-tight ml-3 text-left min-w-max">
+                                    <div className="xl:text-xl text-base font-regular text-white leading-tight ml-3 text-left min-w-max font-ucmasfont">
                                         {stat.label}
                                     </div>
                                 </div>

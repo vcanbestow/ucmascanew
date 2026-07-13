@@ -1,11 +1,10 @@
-
 'use client';
 
 import SectionTitle from "@/components/UI/SectionTitle";
 import Image from 'next/image';
 import { animate } from "framer-motion";
 import React, { useEffect, useState, useRef } from 'react';
- 
+
 interface CounterProps {
     from?: number;
     to: number;
@@ -33,6 +32,7 @@ function Counter({ from = 0, to, decimals = 0 }: CounterProps) {
 
     return <span ref={nodeRef}>{from}</span>;
 }
+
 export default function AwardsAccreditation() {
     const [mounted, setMounted] = useState(false);
 
@@ -55,22 +55,21 @@ export default function AwardsAccreditation() {
     // Seamless looping ke liye array ko duplicate render kiya jata hai
     const doubleStats = [...statsData, ...statsData];
 
-
-
+    // Varied animation durations loop
+    const durations = [800, 1000, 1200];
 
     return (
         <>
             <section className="">
                 {/* Top Header Section Content Title */}
                 <div className=''>
-                    {/* SectionTitle implementation example */}
                     <SectionTitle ParaclassName="md:max-w-4/5 mx-auto"
                         titleTop={<><em>Awards</em></>}
                         titleBottom=""
                         highlightText={<>& <br className="hidden md:block" />Accreditation</>}
                         subtitle={[
                             <>
-                              Awards don't happen by chance. UCMAS has earned global recognition and prestigious accreditations <br className="hidden lg:block" /> that reflect real commitment to quality, innovation, and impact that lasts.
+                                Awards don't happen by chance. UCMAS has earned global recognition and prestigious accreditations <br className="hidden lg:block" /> that reflect real commitment to quality, innovation, and impact that lasts.
                             </>
                         ]}
                         titleColor="text-ucmas-sky"
@@ -78,39 +77,47 @@ export default function AwardsAccreditation() {
                         subtitleColor="text-section-heading-paragraph"
                         lineColor="#1e2e54"
                     />
-
                 </div>
-                <div className="  w-full mt-10 ">
+                
+                <div className="w-full mt-10">
                     <div className="w-full overflow-hidden">
                         <div className="flex w-max animate-marqueeawards">
-                            {doubleStats.map((stat, index) => (
-                                <div
-                                    key={index}
-                                    className="w-[20rem] shrink-0 "
-                                >
-                                    <div className=" text-center">
-                                        <div className="h-32 flex items-center justify-center mb-5">
-                                            <Image
-                                                src={stat.image}
-                                                alt={stat.content}
-                                                width={120}
-                                                height={120}
-                                                className="max-h-full h-auto w-28 max-w-full object-contain drop-shadow-[0_0.5rem_1.5rem_rgba(149,157,165,0.2)] mb-4 pt-4"
-                                            />
-                                        </div>
-                                        <div className="border-r px-5 border-gray-200">
-                                            <span className="text-2xl lg:text-4xl font-bold text-ucmas-blue mt-4">
-                                                {stat.year}
-                                            </span>
+                            {doubleStats.map((stat, index) => {
+                                // Calculate staggered delay based on original array length
+                                const staggeredDelay = (index % statsData.length) * 150;
+                                // Alternating duration timing
+                                const customDuration = durations[index % durations.length];
 
-                                            <p className="mt-3 text-sm lg:text-base text-award-description">
-                                                {stat.content}
-                                            </p>
-
+                                return (
+                                    <div
+                                        key={index}
+                                        className="w-[20rem] shrink-0" 
+                                        data-aos="fade-up" 
+                                        data-aos-delay={staggeredDelay} 
+                                        data-aos-duration={customDuration}
+                                    >
+                                        <div className="text-center">
+                                            <div className="h-32 flex items-center justify-center mb-5">
+                                                <Image
+                                                    src={stat.image}
+                                                    alt={stat.content}
+                                                    width={120}
+                                                    height={120}
+                                                    className="max-h-full h-auto w-28 max-w-full object-contain drop-shadow-[0_0.5rem_1.5rem_rgba(149,157,165,0.2)] mb-4 pt-4"
+                                                />
+                                            </div>
+                                            <div className="border-r px-5 border-gray-200">
+                                                <span className="text-2xl lg:text-4xl font-bold text-ucmas-blue mt-4">
+                                                    {stat.year}
+                                                </span>
+                                                <p className="mt-3 text-sm lg:text-base text-award-description">
+                                                    {stat.content}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

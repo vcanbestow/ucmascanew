@@ -46,7 +46,7 @@ export default function BannerSlider() {
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
     return (
-        <div className="w-full relative overflow-hidden group">
+        <div className="w-full relative overflow-hidden group" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1500">
             {/* Previous Button */}
             <button
                 onClick={() => swiperInstance?.slidePrev()}

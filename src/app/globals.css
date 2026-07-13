@@ -1,166 +1,187 @@
 @import "tailwindcss";
-@font-face {
-  font-family: "Ubuntu";
-  src: url("/fonts/Ubuntu-Regular.woff2") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "ucmasfont";
-  src: url("/fonts/Ubuntu-R.woff2") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@layer components {
-  .my-container {
-    @apply container md:max-w-[94%] xl:max-w-full  3xl:max-w-11/12 mx-auto px-6 3xl:px-12;
-  }
-}
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+    /* Theme Colors */
+    --color-ucmas-red: #ec3235;
+    --color-ucmas-blue: #1e2e54;
+    --color-ucmas-themeblue: #323e87;
+    --color-ucmas-yellow: #fcc245;
+    --color-ucmas-counter-franchise-yellow: #fcc245;
+    --color-ucmas-sky: #00a6da;
+    --color-ucmas-headerbtn: #243054;
+    --color-award-description: #4a5568;
+    --color-footer-bg: #172553;
+    --color-upcomingevent-bg: #fffef5;
+    --color-ucmas-light-sky: #0cb4e4;
+    --color-parentproblem-bg-section: #f9f7f2;
+    --color-parentproblem-orange: #f28c38;
+    --color-footer-linkbottom-border: #11346e;
+    --color-section-heading-paragraph: #435370;
+    --color-ucmas-franchise-bluebox: #314369;
+    --color-flagship-program-box-bg: #fbf9f4;
+    --color-focusbg: #e4bf48;
+    --color-orange-bg: #ff712c;
+    /* Font Maps (Cleaned up duplicate assignment) */
+    --font-ucmasfont: "Ubuntu-Ucmas", sans-serif;
+    /* Background Gradients & Animations */
+    --CognitiveCalculator: linear-gradient(180deg, #e3e2e0, #afb2bd);
+    --animate-marquee: marquee 25s linear infinite;
+    --breakpoint-3xl: 109.375rem;
+    --breakpoint-4xl: 1921px;
+    @keyframes marquee {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
 }
 
-@theme {
-  /* Yahan apne actual HEX color codes daal dijiye */
-  --color-ucmas-red: #ec3235;
-  --color-ucmas-blue: #1e2e54;
-  --color-ucmas-themeblue: #323e87;
-  --color-ucmas-yellow: #fcc245;
-  --color-ucmas-counter-franchise-yellow: #fcc245;
-  /* --color-ucmas-sky: #028db9; */
-  --color-ucmas-sky: #00a6da;
-  --color-ucmas-headerbtn: #243054;
-  --color-award-description: #4a5568;
-  --color-footer-bg: #172553;
-  --color-upcomingevent-bg: #fffef5;
-  --color-ucmas-light-sky: #0cb4e4;
-  --color-parentproblem-bg-section: #f9f7f2;
-  --color-parentproblem-orange: #f28c38;
-  --color-footer-linkbottom-border: #11346e;
-  --color-section-heading-paragraph: #435370;
-  --color-ucmas-franchise-bluebox: #314369;
-  --color-flagship-program-box-bg: #fbf9f4;
-  --color-focusbg: #e4bf48;
-  --color-orange-bg: #ff712c;
-  --font-ubuntu: "Ubuntu", sans-serif;
-  --font-ucmasfont: "ucmasfont", sans-serif;
-  --CognitiveCalculator: linear-gradient(180deg, #e3e2e0, #afb2bd);
-  --animate-marquee: marquee 25s linear infinite;
-  --breakpoint-3xl: 109.375rem;
-  --breakpoint-4xl: 1921px;
-  @keyframes marquee {
-    from {
-      transform: translateX(0%);
+@layer base {
+    /* Light Weight */
+    @font-face {
+        font-family: 'Ubuntu-Ucmas';
+        src: url('/fonts/UBUNTU-LIGHT.woff') format('woff');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
     }
-    to {
-      transform: translateX(-50%);
+    /* Regular Weight */
+    @font-face {
+        font-family: 'Ubuntu-Ucmas';
+        src: url('/fonts/Ubuntu-R.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
     }
-  }
+    /* Medium Weight */
+    @font-face {
+        font-family: 'Ubuntu-Ucmas';
+        src: url('/fonts/Ubuntu-M.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* Bold Weight */
+    @font-face {
+        font-family: 'Ubuntu-Ucmas';
+        src: url('/fonts/Ubuntu-B.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer components {
+    .my-container {
+        /* FIXED: Removed spaces inside the @apply directives */
+        @apply container md:max-w-[94%] xl:max-w-full 3xl:max-w-11/12 mx-auto px-4 3xl:px-12;
+    }
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* --background: #ffffff;
-        --foreground: #ededed; */
-  }
+     :root {
+        /* Intentionally blank if handling manually */
+    }
 }
 
 body {
-  /* font-family: 'poppins', Helvetica, sans-serif; */
-  background-color: white !important;
-}
-
-p {
-  /* color: #222222; */
+    background-color: white !important;
 }
 
 section {
-  padding: 3rem 0rem;
+    padding: 3rem 0rem;
 }
+
 
 /* Home 2 kids css */
 
 @layer utilities {
-  .animate-fade-in {
-    animation: stepsPanelFade 0.35s ease-out forwards;
-  }
-  .-rotate-270 {
-    transform: rotate(270deg);
-  }
+    .animate-fade-in {
+        animation: stepsPanelFade 0.35s ease-out forwards;
+    }
+    .-rotate-270 {
+        transform: rotate(270deg);
+    }
 }
 
 @keyframes stepsPanelFade {
-  from {
-    opacity: 0;
-    transform: scale(0.99) translateY(0.25rem);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.99) translateY(0.25rem);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
+
 
 /* Chrome, Safari, Edge customization for range dot */
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 0.875rem;
-  height: 0.875rem;
-  border-radius: 50%;
-  background: var(--color-ucmas-red) !important;
-  /* Perfect Red custom dot */
-  cursor: pointer;
-  border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
+    background: var(--color-ucmas-red) !important;
+    cursor: pointer;
+    border: none;
 }
+
 
 /* Firefox compatibility range dot */
 
 input[type="range"]::-moz-range-thumb {
-  width: 0.875rem;
-  height: 0.875rem;
-  border-radius: 50%;
-  background: var(--color-ucmas-red) !important;
-  cursor: pointer;
-  border: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
+    background: var(--color-ucmas-red) !important;
+    cursor: pointer;
+    border: none;
 }
+
 
 /* Home 2 kids css */
 
 .CognitiveCalculator {
-  background: var(--CognitiveCalculator);
+    background: var(--CognitiveCalculator);
 }
 
 @media (min-width: 1800px) {
-  section {
-    padding: 4rem 0rem;
-  }
+    section {
+        padding: 4rem 0rem;
+    }
 }
 
 @keyframes marqueeawards {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 .animate-marqueeawards {
-  display: flex;
-  width: max-content;
-  animation: marqueeawards 40s linear infinite;
-  will-change: transform;
+    display: flex;
+    width: max-content;
+    animation: marqueeawards 40s linear infinite;
+    will-change: transform;
 }
 
 .animate-marqueeawards:hover {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
+
 
 /* @media (min-width: 1280px) {
   .container {
@@ -168,13 +189,14 @@ input[type="range"]::-moz-range-thumb {
     max-width: 90% !important;
   }
 } */
+
 @media (min-width: 1921px) {
-  html {
-    font-size: calc(12px + (18 - 12) * ((100vw - 1200px) / (1920 - 1200)));
-  }
+    html {
+        font-size: calc(12px + (18 - 12) * ((100vw - 1200px) / (1920 - 1200)));
+    }
 }
 
 .button_svgicon svg {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }

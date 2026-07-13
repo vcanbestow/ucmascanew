@@ -103,7 +103,7 @@ export default function UpcomingWorkshops() {
               <button
                 onClick={() => swiperInstance?.slidePrev()}
                 className="flex items-center justify-center w-10 h-10 rounded-xl border border-ucmas-light-sky hover:bg-cyan-50 hover:border-ucmas-light-sky transition-colors bg-white shadow-sm cursor-pointer"
-                aria-label="Previous slide"
+                aria-label="Previous slide"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +124,7 @@ export default function UpcomingWorkshops() {
                 onClick={() => swiperInstance?.slideNext()}
                 className="flex items-center justify-center w-10 h-10 rounded-xl border border-ucmas-light-sky hover:bg-cyan-50 hover:border-ucmas-light-sky transition-colors bg-white shadow-sm cursor-pointer"
                 aria-label="Next slide"
+                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1100"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +146,7 @@ export default function UpcomingWorkshops() {
         </div>
 
         <div className="my-container 3xl:max-w-full lg:!px-2">   
-          <div className="w-full">
+          <div className="w-full"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <Swiper
               modules={[Navigation, Autoplay]}
               onSwiper={setSwiperInstance}
@@ -240,10 +241,10 @@ export default function UpcomingWorkshops() {
           </div>
         </div>
       </div>
-      <div className="text-center max-w-11/12 mx-auto px-6 lg:px-12">
+      <div className="text-center max-w-11/12 mx-auto px-6 lg:px-12"   data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
         <Button
           variant="ucmas_red_btn_outline"
-          href="/contact"
+          href="#"
           icon={<MoveRight size={20} strokeWidth={2} />}
           iconPosition="right"
           className="mx-auto"

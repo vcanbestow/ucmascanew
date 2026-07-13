@@ -20,14 +20,14 @@ const PROGRAM_DATA = [
                 logo: "/images/i-Maths Logo B.webp",
                 alt: "i-Maths Logo",
                 title: "Early\nMath",
-                link: "/early-math",
+                link: "#",
                 buttonText: "Know More",
             },
             {
                 logo: "/images/A2Z_English_Blue.webp",
                 alt: "A2Z English Logo",
                 title: "Comprehensive\nEnglish",
-                link: "/comprehensive-english",
+                link: "#",
                 buttonText: "Know More",
             },
         ],
@@ -45,14 +45,14 @@ const PROGRAM_DATA = [
                 alt: "UCMAS Logo",
                 tag: "Junior",
                 title: "Basics of\nAbacus",
-                link: "/basics-of-abacus",
+                link: "#",
                 buttonText: "Know More",
             },
             {
                 logo: "/images/Obots Nano.webp",
                 alt: "OBOTZ Logo",
                 title: "Basics of\nSTEM",
-                link: "/basics-of-stem",
+                link: "#",
                 buttonText: "Know More",
             },
         ],
@@ -69,14 +69,14 @@ const PROGRAM_DATA = [
                 logo: "/images/UCMAS logo.webp",
                 alt: "UCMAS Logo",
                 title: "Abacus\nMental Math",
-                link: "/abacus-mental-math",
+                link: "#",
                 buttonText: "Know More",
             },
             {
                 logo: "/images/Obotz Logo Blue Tagline.webp",
                 alt: "OBOTZ Logo",
                 title: "Robotics &\nCoding",
-                link: "/robotics-and-coding",
+                link: "#",
                 buttonText: "Know More",
             },
         ],
@@ -129,7 +129,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                     lineColor="#1e2e54"
                     className="  "
                 />
-            <div className="container px-6 lg:px-12 mx-auto ">
+            <div className="my-container">
 
 
                 {/* Desktop Navigation Tabs */}
@@ -144,6 +144,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                     ? "bg-orange-bg text-white border border-orange-bg shadow-[0_0.25rem_0.9375rem_rgba(255,107,53,0.4)]"
                                     : "bg-transparent text-ucmas-blue border border-ucmas-dark hover:bg-gray-50"
                                     }`}
+                                    //  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
                             >
                                 {tab.ageGroup}
                             </button>
@@ -189,7 +190,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-7  ">
 
                                         {/* First Program Card */}
-                                        <div className="order-1 w-full xl:w-9/12 mx-auto">
+                                        <div className="order-1 w-full xl:w-9/12 mx-auto"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                                             <div className="flex flex-col items-center text-center p-5 lg:p-7 bg-flagship-program-box-bg border border-orange-bg rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-auto md:min-h-70 md:mb-6   justify-center w-full">
                                                 <div className="h-20 flex items-center justify-center mb-1">
                                                     <Image width={400} height={400} quality={100} src={tab.cards[0].logo} alt={tab.cards[0].alt} className="h-20 max-w-36 object-contain" />
@@ -214,7 +215,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                         </div>
 
                                         {/* Center Image (The Kid) */}
-                                        <div className="order-3 md:order-2 flex items-end justify-center mt-4 md:mt-0 w-full">
+                                        <div className="order-3 md:order-2 flex items-end justify-center mt-4 md:mt-0 w-full" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                                             <div className="relative h-full flex items-end justify-center md:min-h-80   ">
                                                 <Image
                                                     width={600}
@@ -227,7 +228,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                         </div>
 
                                         {/* Second Program Card */}
-                                        <div className="order-2 md:order-3   w-full xl:w-9/12 mx-auto">
+                                        <div className="order-2 md:order-3   w-full xl:w-9/12 mx-auto" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                             <div className="flex flex-col items-center text-center p-5 lg:p-7 bg-flagship-program-box-bg border border-orange-bg rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-auto md:min-h-70  md:mb-6  justify-center w-full">
                                                 <div className="h-20 flex items-center justify-center mb-6">
                                                     <Image

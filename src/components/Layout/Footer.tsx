@@ -105,17 +105,17 @@ export default function Footer() {
             <div className="bg-blue-950">
                 <div className="my-container  ">
                     <div className="flex flex-col items-center justify-between gap-2 border-t border-gray-600 mx-auto py-3 text-center lg:flex-row lg:text-left">
-                        <p className="text-sm text-white">
+                        <p className="text-sm text-gray-300">
                             © UCMAS, {new Date().getFullYear()}. All rights reserved.
                         </p>
 
-                        <p className="text-sm text-white">
+                        <p className="text-sm text-gray-300">
                             Designed &amp; Developed by{" "}
                             <a
                                 href="https://bestow.in"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-medium text-white transition-opacity duration-300 hover:opacity-80"
+                                className="font-medium text-gray-300 transition-opacity duration-300 hover:opacity-80"
                             >
                                 Bestow
                             </a>

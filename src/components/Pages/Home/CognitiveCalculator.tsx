@@ -73,13 +73,13 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               <>
                 When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.
                 <br /> 
+                <br className="hidden md:block" /> 
                 Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.
               </>
             ]}
             titleColor="text-ucmas-blue"
-            highlightColor="text-ucmas-sky"
-            // यहाँ Tailwind की कॉलम और अलाइनमेंट क्लासेस जोड़ दी हैं
-            subtitleColor="text-section-heading-paragraph md:columns-2 gap-10 text-justify leading-[1.8]"
+            highlightColor="text-ucmas-sky" 
+            subtitleColor="text-section-heading-paragraph lg:columns-2 gap-10 text-justify leading-[1.8]"
             lineColor="#1e2e54"
           />
         </div>
@@ -99,7 +99,7 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
                   src="/images/Child Left.webp"
                   alt="Girl Left"
                   className="h-full w-auto object-contain object-bottom"
-                  priority
+                  priority  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"
                 />
               </div>
 
@@ -108,7 +108,7 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               {/* LEFT SECTION INFO PANEL */}
               <div className="w-full md:w-[52%] md:pr-7 md:border-r border-white/10 flex flex-col text-center md:text-left items-center md:items-start pb-8 md:pb-0 justify-center">
                 <h2 className="text-3xl lg:text-4xl font-extrabold w-full text-white leading-[1.15] mb-4 tracking-wide">
-                 Get Personalized Learning Recommendations
+                 Get Personalized Learning Recomme ndations
                 </h2>
                 <h2 className="text-2xl font-extrabold text-white leading-[1.15] mb-4 tracking-wide">
                   Test Your Child's  <br className="hidden lg:block" /> Cognitive Strengths
@@ -247,7 +247,7 @@ const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
                   alt="Girl Right"
                   className="h-full w-auto object-contain object-bottom"
                   priority
-                  quality={100}
+                  quality={100}  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
                 />
               </div>
             </div>
