@@ -11,7 +11,7 @@ import CtaSection from "@/components/Pages/Home/CtaSection";
 
 export default function Home() {
   return (
-    <>
+    <> 
       <div className="">
         {/* Hero Section Banner Slider */}
         <div className="w-full">
