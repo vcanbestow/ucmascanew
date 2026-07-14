@@ -4,6 +4,8 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import Link from "next/link";
 import Image from "next/image";
+import { MathStruggle, FocusAttention, MemorIcon, Confidence, MoreChallenge, Foundation, BulbCircleWhiteIcon } from "@/components/UI/Icons";
+
 import { path } from "@/utils/path"; // Import the path utility
 import {
   Brain,
@@ -32,33 +34,15 @@ const TAB_DATA = [
       subtitle: "My child is falling behind in school.",
       bgColor: "#61b5cf",
       inactiveBgColor: "#FFFFFF",
-      inactiveIconBg: "#61b5cf",
+      inactiveIconBg: "#00a6da",
       inactiveIconColor: "#FFFFFF",
-      activeIconBg: "rgba(255,255,255,0.2)",
+      activeIconBg: "#00a6da",
       activeIconColor: "#FFFFFF",
       activeTitleColor: "#FFFFFF",
-      inactiveTitleColor: "#1E293B",
+      inactiveTitleColor: "#1e2e54",
       activeSubtitleColor: "rgba(255,255,255,0.9)",
       inactiveSubtitleColor: "#64748B",
-      icon: <Calculator className="w-5 h-5 md:w-6 md:h-6" />,
-
-      // icon: (
-      //     <svg
-      //         xmlns="http://www.w3.org/2000/svg"
-      //         width="20"
-      //         height="20"
-      //         viewBox="0 0 24 24"
-      //         fill="none"
-      //         stroke="currentColor"
-      //         strokeWidth="2"
-      //         strokeLinecap="round"
-      //         strokeLinejoin="round"
-      //         className="w-5 h-5 text-white"
-      //     >
-      //         <path d="M18 8L22 12L18 16" />
-      //         <path d="M2 12H22" />
-      //     </svg>
-      // ),
+      icon: <MathStruggle className="h-10 w-10" />,
     },
     content: {
       headingPart1: "Turn Math Struggles into ",
@@ -69,41 +53,21 @@ const TAB_DATA = [
         "With the UCMAS Abacus program, your child strengthens their math foundation and builds exceptional number skills. Here’s what children gain at UCMAS.",
       paragraphColor: "text-flagship-program-box-bg",
       features: [
-        // {
-        //     icon: (
-        //         <svg
-        //             xmlns="http://www.w3.org/2000/svg"
-        //             width="20"
-        //             height="20"
-        //             viewBox="0 0 24 24"
-        //             fill="none"
-        //             stroke="currentColor"
-        //             strokeWidth="2"
-        //             strokeLinecap="round"
-        //             strokeLinejoin="round"
-        //             className="w-5 h-5 text-white"
-        //         >
-        //             <path d="M18 8L22 12L18 16" />
-        //             <path d="M2 12H22" />
-        //         </svg>
-        //     ),
-        //     text: "Strong Foundation of Numbers",
-        // },
         {
-          icon: <TrendingUp className="w-6 h-6" />,
-          text: "Strong Foundation of Numbers & Arithmetic Sense",
+          icon: <BulbCircleWhiteIcon className="h-10 w-10" />,
+          text: "Visualization turns numbers and information into pictures ",
         },
         {
-          icon: <Brain className="w-6 h-6" />,
-          text: "Accuracy and Speed in Doing Math Operations",
+          icon: <MathStruggle className="h-10 w-10" />,
+          text: "Regular practice makes recalling information quick & easy",
         },
         {
-          icon: <Target className="w-6 h-6" />,
-          text: "Children Stop Fearing Numbers and Start Enjoying Math",
+          icon: <MathStruggle className="h-10 w-10" />,
+          text: "Repetition strengthens long-term memory power",
         },
         {
-          icon: <Award className="w-6 h-6" />,
-          text: "Remarkable Improvement in Math Grades",
+          icon: <MathStruggle className="h-10 w-10" />,
+          text: "Sharper memory helps in every subject at school ",
         },
       ],
       featureTextColor: "text-flagship-program-box-bg",
@@ -128,15 +92,16 @@ const TAB_DATA = [
       subtitle: "My child gets easily distracted.",
       bgColor: "#e4bf48",
       inactiveBgColor: "#FFFFFF",
-      inactiveIconBg: "#e4bf48",
+      inactiveIconBg: "#e8ba26",
       inactiveIconColor: "#FFFFFF",
-      activeIconBg: "rgba(255,255,255,0.2)",
+      activeIconBg: "#e8ba26",
       activeIconColor: "#FFFFFF",
       activeTitleColor: "#FFFFFF",
-      inactiveTitleColor: "#1E293B",
+      inactiveTitleColor: "#1e2e54",
       activeSubtitleColor: "rgba(255,255,255,0.9)",
       inactiveSubtitleColor: "#64748B",
-      icon: <Crosshair className="w-5 h-5 md:w-6 md:h-6" />,
+      icon: <FocusAttention className="h-10 w-10" />,
+
     },
     content: {
       headingPart1: "From Short Attention to ",
@@ -148,19 +113,19 @@ const TAB_DATA = [
       paragraphColor: "text-footer-bg",
       features: [
         {
-          icon: <TrendingUp className="w-6 h-6" />,
+          icon: <MathStruggle className="h-10 w-10" />,
           text: "Speed writing exercise for improved focus",
         },
         {
-          icon: <Brain className="w-6 h-6" />,
+          icon: <MathStruggle className="h-10 w-10" />,
           text: "Flash card exercises build active attention",
         },
         {
-          icon: <Target className="w-6 h-6" />,
+          icon: <MathStruggle className="h-10 w-10" />,
           text: "Faster calculations strengthen sustained concentration",
         },
         {
-          icon: <Award className="w-6 h-6" />,
+          icon: <MathStruggle className="h-10 w-10" />,
           text: "Children stay attentive longer, both in class and at home",
         },
       ],
@@ -191,10 +156,10 @@ const TAB_DATA = [
       activeIconBg: "rgba(255,255,255,0.25)",
       activeIconColor: "#FFFFFF",
       activeTitleColor: "#FFFFFF",
-      inactiveTitleColor: "#1E293B",
+      inactiveTitleColor: "#1e2e54",
       activeSubtitleColor: "rgba(255,255,255,0.9)",
       inactiveSubtitleColor: "#64748B",
-      icon: <CloudLightning className="w-5 h-5 md:w-6 md:h-6" />,
+      icon: <MemorIcon className="h-10 w-10" />,
     },
     content: {
       headingPart1: "Train the ",
@@ -244,15 +209,16 @@ const TAB_DATA = [
       subtitle: "My child hesitates to participate in class",
       bgColor: "#42be9a",
       inactiveBgColor: "#FFFFFF",
-      inactiveIconBg: "#42be9a",
+      inactiveIconBg: "#04996e",
       inactiveIconColor: "#FFFFFF",
-      activeIconBg: "rgba(255,255,255,0.2)",
+      activeIconBg: "#04996e",
       activeIconColor: "#FFFFFF",
       activeTitleColor: "#FFFFFF",
-      inactiveTitleColor: "#1E293B",
+      inactiveTitleColor: "#1e2e54",
       activeSubtitleColor: "rgba(255,255,255,0.9)",
       inactiveSubtitleColor: "#64748B",
-      icon: <ShieldAlert className="w-5 h-5 md:w-6 md:h-6" />,
+      icon: <Confidence className="h-10 w-10" />,
+
     },
     content: {
       headingPart1: "Better Skills and ",
@@ -307,10 +273,10 @@ const TAB_DATA = [
       activeIconBg: "rgba(255,255,255,0.2)",
       activeIconColor: "#FFFFFF",
       activeTitleColor: "#FFFFFF",
-      inactiveTitleColor: "#1E293B",
+      inactiveTitleColor: "#1e2e54",
       activeSubtitleColor: "rgba(255,255,255,0.9)",
       inactiveSubtitleColor: "#64748B",
-      icon: <TrendingUp className="w-6 h-6" />,
+      icon: <MoreChallenge className="h-10 w-10" />,
     },
     content: {
       headingPart1: "Designed for Kids Who Are ",
@@ -360,15 +326,16 @@ const TAB_DATA = [
       subtitle: "Give my child a head start",
       bgColor: "#f16167",
       inactiveBgColor: "#FFFFFF",
-      inactiveIconBg: "#f16167",
+      inactiveIconBg: "#f02931",
       inactiveIconColor: "#FFFFFF",
-      activeIconBg: "rgba(255,255,255,0.2)",
+      activeIconBg: "#f02931",
       activeIconColor: "#FFFFFF",
       activeTitleColor: "#FFFFFF",
-      inactiveTitleColor: "#1E293B",
+      inactiveTitleColor: "#1e2e54",
       activeSubtitleColor: "rgba(255,255,255,0.9)",
       inactiveSubtitleColor: "#64748B",
-      icon: <Baby className="w-5 h-5 md:w-6 md:h-6" />,
+      icon: <Foundation className="h-10 w-10" />,
+
     },
     content: {
       headingPart1: "Where Early Learning Becomes ",
@@ -423,7 +390,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
   if (!isOpen) return null;
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -508,7 +475,7 @@ export default function DynamicTabSection() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTabId(item.id)}
-                  className={`flex-1 flex flex-col hover:shadow=[0_8px_25px_#1e2e5414] mb-6  pt-10 h-60 pb-6 cursor-pointer text-left relative outline-none p-4 rounded-t-[1.5rem] ${isActive ? "translate-y-6 z-20" : " hover:-mt-2 mt-0 bg-white border rounded-[1.5rem] border-gray-100 hover:bg-gray-50"}`}
+                  className={`flex-1 flex flex-col hover:shadow=[0_8px_25px_#1e2e5414] mb-6  pt-10 h-60 pb-6 cursor-pointer text-left relative outline-none p-4 rounded-t-3xl ${isActive ? "translate-y-6 z-20" : " hover:-mt-2 mt-0 bg-white border rounded-3xl border-gray-100 hover:bg-gray-50"}`}
                   style={{
                     backgroundColor: isActive ? item.tab.bgColor : "#FFFFFF",
                   }}
@@ -551,7 +518,7 @@ export default function DynamicTabSection() {
                     }}
                   >
                     {React.cloneElement(item.tab.icon, {
-                      className: "w-6 h-6",
+                      className: "w-8 h-8",
                     })}
                   </div>
                   <h3
@@ -617,7 +584,10 @@ export default function DynamicTabSection() {
                       color: item.tab.inactiveIconColor,
                     }}
                   >
-                    {item.tab.icon}
+                    {/* {item.tab.icon} */}
+                    {React.cloneElement(item.tab.icon, {
+                      className: "w-6 h-6",
+                    })}
                   </div>
                   <div className="flex-1 text-left">
                     <h3 className="font-bold text-lg">{item.tab.title}</h3>
@@ -698,8 +668,8 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
   const paragraphProps = getColorProps(content.paragraphColor);
 
   return (
-    <div className="grid lg:grid-cols-12  gap-8 md:gap-12 items-center" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-      <div className="lg:col-span-7">
+    <div className="grid grid-cols-1 lg:grid-cols-12  gap-8 md:gap-12 items-center" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+      <div className="col-span-1 lg:col-span-7">
         <div className="  lg:mb-14 mb-6">
           <h2 className=" mb-3 text-2xl md:text-3xl font-extrabold leading-tight">
             <span {...getColorProps(content.headingPart1Color)}>
@@ -739,6 +709,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
                 content.featureBorderColor &&
                 !content.featureBorderColor.startsWith("#") &&
                 !content.featureBorderColor.startsWith("rgba");
+
               const borderProps = {
                 className: isTailwindBorder ? content.featureBorderColor : "",
                 style: !isTailwindBorder
@@ -749,17 +720,25 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
               return (
                 <div
                   key={i}
-                  className={`flex items-center  gap-4 ${getColorProps(content.featureTextColor).className}`}
+                  className={`flex items-start gap-4 max-w-full ${getColorProps(content.featureTextColor).className}`}
                   style={getColorProps(content.featureTextColor).style}
                 >
-                  {/* Dynamically handles both Tailwind border utilities and Hex color codes */}
+                  {/* Border Box Wrapper - Yeh wrapper aapke custom icon ko border ke sath contain karega */}
                   <div
-                    className={`w-12 h-12 rounded-full  border-2 flex items-center justify-center shrink-0 ${borderProps.className}`}
+                    className={` flex items-center justify-center shrink-0 ${borderProps.className}`}
                     style={borderProps.style}
                   >
-                    {f.icon}
+                    {/* Directly rendering the icon from TAB_DATA features. 
+            Aapne array me pehle se hi className="h-10 w-10" ya custom sizes de rakhi hain,
+            isliye hum bina kisi force-override ke direct render kar rahe hain.
+          */}
+                    {f.icon && <div className="shrink-0 flex items-center justify-center">{f.icon}</div>}
                   </div>
-                  <p className=" font-semibold ">{f.text}</p>
+
+                  {/* Text layout formatting for layout wrap */}
+                  <p className="font-semibold wrap-break-word whitespace-normal flex-1 ">
+                    {f.text}
+                  </p>
                 </div>
               );
             })}
@@ -792,7 +771,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
           >
             View All Events
           </Button> */}
-          <Button
+          {/* <Button
             href="#"
             className={`${getBgProps(content.button.bgColor).className} ${getTextProps(content.button.textColor).className} px-8 py-2 group font-semibold border-none mx-auto rounded-[.45rem] transition-all duration-300`}
             style={{
@@ -810,6 +789,27 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
             iconPosition="right"
           >
             {content.button.text}
+          </Button> */}
+          <Button
+            href="#"
+            className={`${getBgProps(content.button.bgColor).className} ${getTextProps(content.button.textColor).className} px-4 sm:px-8 py-2 group font-semibold border-none mx-auto rounded-[.45rem] transition-all duration-300 max-w-full inline-flex sm:inline-flex`}
+            style={{
+              ...getBgProps(content.button.bgColor).style,
+              ...getTextProps(content.button.textColor).style,
+            }}
+            icon={
+              <MoveRight
+                size={20}
+                strokeWidth={2}
+                className={`w-5 h-5 shrink-0 ${getTextProps(content.button.arrowColor).className}`}
+                style={getTextProps(content.button.arrowColor).style}
+              />
+            }
+            iconPosition="right"
+          >
+            <span className="break-words whitespace-normal text-center line-clamp-2 sm:line-clamp-none">
+              {content.button.text}
+            </span>
           </Button>
         </div>
         {/* <div className="relative z-10">
@@ -830,18 +830,18 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
         className="relative lg:col-span-5 xl:col-span-4 xl:col-start-9 2xl:col-span-3 2xl:col-start-10 group cursor-pointer w-full max-w-xl mx-auto"
         onClick={() => setIsVideoModalOpen(true)} data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
       >
-        <div className="relative rounded-3xl lg:h-96 lg:min-h-96 overflow-hidden aspect-[4/3] w-full">
+        <div className="relative rounded-2xl lg:rounded-3xl lg:h-96 lg:min-h-96 overflow-hidden aspect-[4/3] w-full">
           <Image
             src={activeData.content.video.thumbnail}
             alt="Video"
             className="w-full h-full object-cover"
-             width={140} height={45}
-             quality={100}
+            width={140} height={45}
+            quality={100}
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
+            <div className="md:w-20 w-12 md:h-20 h-12 bg-white rounded-full flex items-center justify-center">
               <Play
-                className="w-8 h-8 ml-1"
+                className="w-4 md:w-7 h-4 md:h-7 ml-1"
                 style={{ color: activeData.tab.bgColor }}
                 fill={activeData.tab.bgColor}
               />

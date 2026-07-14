@@ -10,35 +10,42 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 import Button from '@/components/UI/Button';
 import { path } from '@/utils/path';
+// import { Link } from 'lucide-react';
+import Link from "next/link";
+
 
 const slides = [
     {
         id: 1,
-        title: "Welcome to Our Modern Website",
-        description: "Experience the power of Next.js and Tailwind CSS working perfectly together.",
+        title: "",
+        description: "",
         image: "Banner-15.webp",
-        btnText: "Get Started"
+        btnText: "",
+        bannerlink: "#"
     },
     {
         id: 2,
-        title: "Fast, Secure, and Scalable",
-        description: "Built with the latest App Router, React Compiler, and advanced UI components.",
+        title: "",
+        description: "",
         image: "Banner-17.webp",
-        btnText: "Learn More"
+        btnText: "",
+        bannerlink: "#"
     },
     {
         id: 3,
-        title: "Custom Brand Colors Setup",
-        description: "Easily integrate your UCMAS colors with Tailwind CSS v4 seamlessly.",
+        title: "",
+        description: "",
         image: "Banner-18.webp",
-        btnText: "View Colors"
+        btnText: "",
+        bannerlink: "#"
     },
     {
         id: 4,
-        title: "Custom Brand Colors Setup",
-        description: "Easily integrate your UCMAS colors with Tailwind CSS v4 seamlessly.",
+        title: "",
+        description: "",
         image: "Banner-19.webp",
-        btnText: "View Colors"
+        btnText: "",
+        bannerlink: "#"
     }
 ];
 
@@ -86,15 +93,16 @@ export default function BannerSlider() {
                 {slides.map((slide) => (
                     <SwiperSlide key={slide.id}>
                         <div className="relative w-full">
-                            <Image
-                                src={`${path}/images/${slide.image}`}
-                                alt="Slide Image"
-                                width={1920}
-                                height={600}
-                                quality={100}
-                                className="w-full h-auto"
-                            />
-
+                            <Link href={slide.bannerlink} className="w-full h-auto"  >
+                                <Image
+                                    src={`${path}/images/${slide.image}`}
+                                    alt="Slide Image"
+                                    width={1920}
+                                    height={600}
+                                    quality={100}
+                                    className="w-full h-auto"
+                                />
+                            </Link>
                             {/* <div
                                     className="absolute inset-0 bg-cover bg-center"
                                     style={{ backgroundImage: `url(${slide.image})` }}

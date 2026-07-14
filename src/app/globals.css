@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @theme {
     /* Theme Colors */
     --color-ucmas-red: #ec3235;
@@ -27,10 +28,12 @@
     --animate-marquee: marquee 25s linear infinite;
     --breakpoint-3xl: 109.375rem;
     --breakpoint-4xl: 1921px;
+
     @keyframes marquee {
         from {
             transform: translateX(0%);
         }
+
         to {
             transform: translateX(-50%);
         }
@@ -38,34 +41,42 @@
 }
 
 @layer base {
+
     /* Light Weight */
     @font-face {
         font-family: 'Ubuntu-Ucmas';
-        src: url('/ucmasnext/fonts/UBUNTU-LIGHT.woff') format('woff'); /* /ucmasnext add kiya */
+        src: url('/ucmasnext/fonts/UBUNTU-LIGHT.woff') format('woff');
+        /* /ucmasnext add kiya */
         font-weight: 300;
         font-style: normal;
         font-display: swap;
     }
+
     /* Regular Weight */
     @font-face {
         font-family: 'Ubuntu-Ucmas';
-        src: url('/ucmasnext/fonts/Ubuntu-R.woff2') format('woff2'); /* /ucmasnext add kiya */
+        src: url('/ucmasnext/fonts/Ubuntu-R.woff2') format('woff2');
+        /* /ucmasnext add kiya */
         font-weight: 400;
         font-style: normal;
         font-display: swap;
     }
+
     /* Medium Weight */
     @font-face {
         font-family: 'Ubuntu-Ucmas';
-        src: url('/ucmasnext/fonts/Ubuntu-M.woff2') format('woff2'); /* /ucmasnext add kiya */
+        src: url('/ucmasnext/fonts/Ubuntu-M.woff2') format('woff2');
+        /* /ucmasnext add kiya */
         font-weight: 500;
         font-style: normal;
         font-display: swap;
     }
+
     /* Bold Weight */
     @font-face {
         font-family: 'Ubuntu-Ucmas';
-        src: url('/ucmasnext/fonts/Ubuntu-B.woff2') format('woff2'); /* /ucmasnext add kiya */
+        src: url('/ucmasnext/fonts/Ubuntu-B.woff2') format('woff2');
+        /* /ucmasnext add kiya */
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -87,7 +98,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-     :root {
+    :root {
         /* Intentionally blank if handling manually */
     }
 }
@@ -98,6 +109,7 @@ body {
 
 section {
     padding: 3rem 0rem;
+    width: 100%;
 }
 
 
@@ -107,6 +119,7 @@ section {
     .animate-fade-in {
         animation: stepsPanelFade 0.35s ease-out forwards;
     }
+
     .-rotate-270 {
         transform: rotate(270deg);
     }
@@ -117,6 +130,7 @@ section {
         opacity: 0;
         transform: scale(0.99) translateY(0.25rem);
     }
+
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -166,6 +180,7 @@ input[type="range"]::-moz-range-thumb {
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     100% {
         transform: translate3d(-50%, 0, 0);
     }

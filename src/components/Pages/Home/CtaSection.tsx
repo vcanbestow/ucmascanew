@@ -20,10 +20,10 @@ export default function CtaVideoHero() {
     };
 
     return (
-        <div className="relative w-full lg:min-h-56 bg-[var(--brand-navy-dark,#0B1A30)] overflow-hidden flex flex-col lg:flex-row lg:items-stretch group/hero"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+        <div className="relative w-full lg:min-h-56 bg-(--brand-navy-dark,#0B1A30) overflow-hidden flex flex-col lg:flex-row lg:items-stretch group/hero"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
 
             <div
-                className="hidden lg:block absolute top-0 left-0 bottom-0 w-[53.5%] z-10 bg-white pointer-events-none md:[clip-path:polygon(0%_0%,99.5%_0%,88%_100%,0_100%)]"
+                className="hidden lg:block absolute top-0 left-0 bottom-0 w-[53.5%] z-10 bg-white pointer-events-none md:[clip-path:polygon(0%_0%,99.1%_0%,88%_100%,0_100%)]"
             />
 
             <div
@@ -70,7 +70,7 @@ export default function CtaVideoHero() {
             {/* 3. RIGHT CTA PANEL                        */}
             {/* Replaces .right-cta-panel               */}
             {/* ========================================= */}
-            <div className="w-full lg:w-[50%] lg:ml-auto px-6 xl:pl-26 py-10  lg:pr-12 lg:pl-12 bg-gradient-to-br from-[var(--brand-navy,#0A1A44)] to-[var(--brand-navy-dark,#0B1A30)] lg:bg-none relative z-30 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+            <div className="w-full lg:w-[50%] lg:ml-auto px-6 xl:pl-26 py-10  lg:pr-12 lg:pl-12 bg-linear-to-br from-[var(--brand-navy,#0A1A44)] to-[var(--brand-navy-dark,#0B1A30)] lg:bg-none relative z-30 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
 
                 {/* Animated Background Effect Placeholder (Pulse) */}
                 <div className="absolute -bottom-10 -right-10 w-120 text-center h-120 pointer-events-none opacity-30 z-0 animate-pulse bg-[radial-gradient(circle,rgba(255,255,255,0.1)_0%,transparent_70%)]" />

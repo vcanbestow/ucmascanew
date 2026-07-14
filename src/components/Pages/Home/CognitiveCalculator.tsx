@@ -73,13 +73,13 @@ export default function CognitiveCalculator() {
               <>
                 When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.
                 <br />
-                <br className="hidden md:block" />
+                <br className="" />
                 Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.
               </>
             ]}
             titleColor="text-ucmas-blue"
             highlightColor="text-ucmas-sky"
-            subtitleColor="text-section-heading-paragraph lg:columns-2 gap-10 text-justify leading-[1.8]"
+            subtitleColor="text-section-heading-paragraph lg:columns-2 gap-10 text-center lg:text-justify leading-[1.8]"
             lineColor="#1e2e54"
           />
         </div>
@@ -92,7 +92,7 @@ export default function CognitiveCalculator() {
             <div className="relative flex flex-col md:flex-row min-h-95 bg-[#162E51] rounded-tl-4xl rounded-tr-3xl p-8 md:p-12 lg:p-10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] z-10">
 
               {/* Left Side Kid Image - Absolute Outside Left */}
-              <div className="absolute left-[-2.8125rem] lg:left-[-6.125rem] xl:left-[-5.5rem] 2xl:left-[-5.3125rem] bottom-6 h-[75%] max-h-[17.5rem] md:max-h-[21.25rem] 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
+              <div className="absolute -left-11.25 lg:-left-25 xl:-left-22 2xl:-left-21.25 bottom-6 h-[75%] max-h-70 md:max-h-85 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
                 <Image
                   width={400}
                   height={500}
@@ -107,13 +107,13 @@ export default function CognitiveCalculator() {
 
               {/* LEFT SECTION INFO PANEL */}
               <div className="w-full md:w-[52%] md:pr-7 md:border-r border-white/10 flex flex-col text-center md:text-left items-center md:items-start pb-8 md:pb-0 justify-center">
-                <h2 className="text-3xl lg:text-4xl font-extrabold w-full text-white leading-[1.15] mb-4 tracking-wide break-words hyphens-auto" lang="en">
+                <h2 className="text-3xl lg:text-4xl font-extrabold w-full text-white leading-[1.15] mb-4 tracking-wide wrap-break-word hyphens-auto" lang="en">
                   Get Personalized Learning Recommendations
                 </h2>
                 <h2 className="text-2xl font-extrabold text-white leading-[1.15] mb-4 tracking-wide">
                   Test Your Child's  <br className="hidden lg:block" /> Cognitive Strengths
                 </h2>
-                <p className="text-xs lg:text-base text-white/60 leading-relaxed max-w-sm break-words hyphens-auto">
+                <p className="text-xs lg:text-base text-white/60 leading-relaxed max-w-sm wrap-break-word hyphens-auto">
                   3 questions. 60 seconds. A Free personalised recommendation for your child.
                 </p>
               </div>
@@ -151,7 +151,7 @@ export default function CognitiveCalculator() {
                         </div>
 
                         {/* Pure CSS Track Rotated Input Range */}
-                        <div className="relative h-[11rem] w-6 flex items-center justify-center">
+                        <div className="relative h-44 w-6 flex items-center justify-center">
                           <input
                             type="range"
                             min={minAge}
@@ -159,7 +159,7 @@ export default function CognitiveCalculator() {
                             value={nativeInputValue}
                             step="1"
                             onChange={handleSliderChange}
-                            className="absolute w-[11rem] h-1 rounded-lg appearance-none cursor-pointer outline-none rotate-90"
+                            className="absolute w-44 h-1 rounded-lg appearance-none cursor-pointer outline-none rotate-90"
                             style={{
                               background: `linear-gradient(to right, rgba(255, 255, 255, 0.2) ${100 - sliderPercentage}%, #ffffff ${100 - sliderPercentage}%)`
                             }}

@@ -223,7 +223,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                                     height={800} quality={100}
                                                     src={`${path}/images/${tab.childImage.src}`}
                                                     alt={tab.childImage.alt}
-                                                    className="max-w-full max-h-[28rem] object-contain"
+                                                    className="max-w-full max-h-112 object-contain"
                                                 />
                                             </div>
                                         </div>

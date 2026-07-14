@@ -170,9 +170,9 @@ export default function UpcomingWorkshops() {
               {workshopData.map((workshop) => (
                 <SwiperSlide key={workshop.id} className="h-auto py-4">
                   {/* Horizontal Card Layout */}
-                  <div className="group bg-upcomingevent-bg rounded-xl border border-ucmas-sky p-3 flex flex-col sm:flex-row gap-4 h-full hover:shadow-md hover:scale-[1.01] transition-all duration-300">
+                  <div className="group bg-upcomingevent-bg md:h-60 lg:h-56 2xl:h-56 3xl:h-50 rounded-xl border border-ucmas-sky p-3 flex flex-col sm:flex-row gap-4 h-full hover:shadow-md hover:scale-[1.01] transition-all duration-300">
                     {/* Image Left */}
-                    <div className="w-full sm:w-[40%] shrink-0 h-48 rounded-lg sm:h-44 pointer-events-none overflow-hidden">
+                    <div className="w-full sm:w-[40%] shrink-0 h-48 md:h-auto rounded-lg sm:h-44 pointer-events-none overflow-hidden">
                       <Image
                         width={600}
                         height={800}
@@ -185,20 +185,20 @@ export default function UpcomingWorkshops() {
                     </div>
 
                     {/* Content Right */}
-                    <div className="flex flex-col justify-between flex-grow py-1 pr-1">
+                    <div className="flex flex-col justify-between flex-grow  ">
                       <div>
-                        <h3 className=" text-[1.15rem] font-bold text-ucmas-blue leading-tight">
+                        <h3 className=" text-[1.15rem] font-bold text-ucmas-blue leading-tight lg:line-clamp-2">
                           {workshop.title}
                         </h3>
-                        <p className="text-xs text-gray-600 min-h-13 mt-2 leading-4.5  line-clamp-3">
+                        <p className="text-xs text-gray-600 mt-2 leading-4.5  line-clamp-3">
                           {workshop.description}
                         </p>
                       </div>
 
-                      <div className="mt-4 flex flex-col gap-3">
+                      <div className="flex flex-col gap-3">
                         {/* Date & Location with Mini Calendar Icon */}
                         <div className="flex items-center gap-2">
-                          <div className="flex flex-col w-5 h-6 border border-slate-300 rounded-[.25rem] overflow-hidden bg-white shrink-0">
+                          <div className="flex flex-col w-5 h-6 border border-slate-300 rounded-sm overflow-hidden bg-white shrink-0">
                             <span className="bg-red-600 h-1.5 w-full block"></span>
                             <span className="flex-grow flex items-center justify-center text-[.5625rem] font-bold text-slate-800">
                               {workshop.dayBadge}
@@ -242,7 +242,7 @@ export default function UpcomingWorkshops() {
           </div>
         </div>
       </div>
-      <div className="text-center max-w-11/12 mx-auto px-6 lg:px-12"   data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+      <div className="text-center my-container"   data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
         <Button
           variant="ucmas_red_btn_outline"
           href="#"

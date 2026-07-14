@@ -168,7 +168,7 @@ export default function Header() {
             <li key={item.title} className="relative group">
               <Link
                 href="#"
-                className="flex items-center gap-1.5 py-2 text-ucmas-blue font-medium transition-colors focus:outline-none hover:text-ucmas-themeblue relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-ucmas-themeblue after:scale-x-0 hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left after:transition-transform after:duration-300 after:ease-out"
+                className="flex items-center gap-1.5 py-2 text-ucmas-blue font-medium transition-colors focus:outline-none hover:text-ucmas-themeblue relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-ucmas-themeblue after:scale-x-0 hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left after:transition-transform after:duration-300 after:ease-out"
                 aria-expanded="false"
                 aria-haspopup={item.hasMegaMenu ? "true" : "false"}
               >
@@ -180,7 +180,7 @@ export default function Header() {
 
               {item.hasMegaMenu && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-50">
-                  <div className="w-[600px] h-[200px] bg-white shadow-xl rounded-lg border border-gray-100 p-6 flex items-center justify-center">
+                  <div className="w-150 h-50 bg-white shadow-xl rounded-lg border border-gray-100 p-6 flex items-center justify-center">
                     <span className="text-gray-400 border border-dashed border-gray-300 p-4 rounded">
                       Mega Menu Content Placeholder for {item.title}
                     </span>
@@ -251,7 +251,13 @@ export default function Header() {
               className="p-2 -mr-2 text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-ucmas-themeblue rounded"
               aria-label="Open Menu"
             >
-              <Menu className="w-6 h-6" />
+              {/* <Menu className="w-6 h-6" /> */}
+              <svg width="569" height="395" className="w-6 h-6" viewBox="0 0 569 395" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="231" width="338" height="65" rx="32.5" fill="#2A2A2A"/>
+<rect y="165" width="569" height="65" rx="32.5" fill="#2A2A2A"/>
+<rect x="231" y="330" width="338" height="65" rx="32.5" fill="#2A2A2A"/>
+</svg>
+
             </button>
           )}
         </div>

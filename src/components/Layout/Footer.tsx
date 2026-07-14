@@ -106,7 +106,7 @@ export default function Footer() {
             </div>
             <div className="bg-blue-950">
                 <div className="my-container  ">
-                    <div className="flex flex-col items-center justify-between gap-2 border-t border-gray-600 mx-auto py-3 text-center lg:flex-row lg:text-left">
+                    <div className="flex flex-col items-center justify-between gap-2 border-t border-gray-600 mx-auto py-3 text-center md:flex-row lg:text-left">
                         <p className="text-sm text-gray-300">
                             © UCMAS, {new Date().getFullYear()}. All rights reserved.
                         </p>

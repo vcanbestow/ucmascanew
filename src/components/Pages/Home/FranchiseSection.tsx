@@ -145,7 +145,7 @@ export default function FranchiseSection() {
     return (
         <section
             ref={sectionRef}
-            className="bg-[url('https://vcantech.in/ucmasnext/images/mgh-bg.webp')] bg-cover bg-center bg-no-repeat !pb-0 relative"
+            className="bg-[url('https://vcantech.in/ucmasnext/images/mgh-bg.webp')] bg-cover bg-center bg-no-repeat pb-0! relative"
         >
             <div className=''>
                 {/* SectionTitle implementation example */}
@@ -235,7 +235,7 @@ export default function FranchiseSection() {
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="px-5 relative bg-ucmas-franchise-bluebox py-6 flex flex-row justify-between items-end flex-grow after:absolute after:inset-0 after:content-[''] after:bg-gradient-to-b after:from-black/50 after:to-transparent">
+                                    <div className="px-5 relative bg-ucmas-franchise-bluebox py-6 flex flex-row justify-between items-end grow after:absolute after:inset-0 after:content-[''] after:bg-linear-to-b after:from-black/50 after:to-transparent">
                                         <div className="flex flex-col pr-2 z-10">
                                             <h4 className="text-ucmas-counter-franchise-yellow font-ucmasfont font-bold text-xl leading-snug group-hover:text-white transition-colors">
                                                 {person.name}
@@ -276,7 +276,7 @@ export default function FranchiseSection() {
             {/* --- Video Modal --- */}
             {activeVideoUrl && (
                 <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10"
+                    className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10"
                     onClick={() => setActiveVideoUrl(null)} // Close when clicking backdrop
                 >
                     <div

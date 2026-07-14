@@ -115,7 +115,7 @@ export default function StatsSlider() {
                         {[...statsData, ...statsData].map((stat, index) => (
                             <div
                                 key={index}
-                                className="flex justify-center items-center px-4 sm:px-8 lg:px-12"
+                                className="flex justify-center items-center px-4 sm:px-8 lg:px-10"
                             >
                                 <div className="flex items-center text-left">
                                     <div className="flex items-baseline select-none">
