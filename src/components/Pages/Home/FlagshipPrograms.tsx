@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useState } from "react";
 import SectionTitle from "@/components/UI/SectionTitle";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
@@ -88,16 +88,16 @@ export default function FlagshipPrograms() {
 
     // Step 1: Normal state change on click
     // Step 1: Normal state change on click
-const handleTabClick = (index: number, isMobile: boolean = false) => {
-    if (isMobile) {
-        setActiveTab(activeTab === index ? -1 : index);
-    } else {
-        setActiveTab(index);
-    }
-};
+    const handleTabClick = (index: number, isMobile: boolean = false) => {
+        if (isMobile) {
+            setActiveTab(activeTab === index ? -1 : index);
+        } else {
+            setActiveTab(index);
+        }
+    };
 
     // Step 2: Smooth scroll triggers ONLY after expansion transition completes
-   const handleTransitionEnd = (index: number, event: React.TransitionEvent) => {
+    const handleTransitionEnd = (index: number, event: React.TransitionEvent) => {
         // Ensure we only look at the height/max-height transition ending
         if (event.propertyName === "max-height" && activeTab === index) {
             const element = document.getElementById(`accordion-${index}`);
@@ -115,20 +115,20 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
 
     return (
         <section className="bg-white !pb-0 pt-16 px-4 sm:px-8 md:px-12 lg:px-20 ">
-                <SectionTitle
-                    ParaclassName="xl:max-w-7/12 mx-auto"
-                    titleTop={<>Our Flagship</>}
-                    titleBottom=""
-                    highlightText={<><em>Programs</em></>}
-                    subtitle={[
-                        "From early foundations in learning to advanced STEM-based robotic projects, we have programs designed to support every stage of your child's development.",
-                    ]}
-                    titleColor="text-ucmas-blue"
-                    highlightColor="text-ucmas-red"
-                    subtitleColor="text-section-heading-paragraph"
-                    lineColor="#1e2e54"
-                    className="  "
-                />
+            <SectionTitle
+                ParaclassName="xl:max-w-7/12 mx-auto"
+                titleTop={<>Our Flagship</>}
+                titleBottom=""
+                highlightText={<><em>Programs</em></>}
+                subtitle={[
+                    "From early foundations in learning to advanced STEM-based robotic projects, we have programs designed to support every stage of your child's development.",
+                ]}
+                titleColor="text-ucmas-blue"
+                highlightColor="text-ucmas-red"
+                subtitleColor="text-section-heading-paragraph"
+                lineColor="#1e2e54"
+                className="  "
+            />
             <div className="my-container">
 
 
@@ -144,7 +144,6 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                     ? "bg-orange-bg text-white border border-orange-bg shadow-[0_0.25rem_0.9375rem_rgba(255,107,53,0.4)]"
                                     : "bg-transparent text-ucmas-blue border border-ucmas-dark hover:bg-gray-50"
                                     }`}
-                                    //  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
                             >
                                 {tab.ageGroup}
                             </button>
@@ -190,11 +189,15 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-7  ">
 
                                         {/* First Program Card */}
-                                        <div className="order-1 w-full xl:w-9/12 mx-auto"  data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                                        <motion.div className="order-1 w-full xl:w-9/12 mx-auto"
+                                            initial={{ opacity: 0, x: -60 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                                            viewport={{ once: true, amount: 0.2 }}>
                                             <div className="flex flex-col items-center text-center p-5 lg:p-7 bg-flagship-program-box-bg border border-orange-bg rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-auto md:min-h-70 md:mb-6   justify-center w-full">
                                                 <div className="h-20 flex items-center justify-center mb-1">
-                                                    <Image width={400} height={400} quality={100} 
-                                                    src={`${path}/images/${tab.cards[0].logo}`} alt={tab.cards[0].alt} className="h-20 max-w-36 object-contain" />
+                                                    <Image width={400} height={400} quality={100}
+                                                        src={`${path}/images/${tab.cards[0].logo}`} alt={tab.cards[0].alt} className="h-20 max-w-36 object-contain" />
                                                 </div>
                                                 {tab.cards[0].tag && (
                                                     <span className="text-xs font-semibold text-[#3e4095] tracking-wide -mt-4 mb-3">
@@ -213,10 +216,14 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                                     {tab.cards[0].buttonText || "Know More"}
                                                 </Button>
                                             </div>
-                                        </div>
+                                        </motion.div>
 
                                         {/* Center Image (The Kid) */}
-                                        <div className="order-3 md:order-2 flex items-end justify-center mt-4 md:mt-0 w-full" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                                        <motion.div className="order-3 md:order-2 flex items-end justify-center mt-4 md:mt-0 w-full"
+                                            initial={{ opacity: 0, y: 60 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                                            viewport={{ once: true, amount: 0.2 }}>
                                             <div className="relative h-full flex items-end justify-center md:min-h-80   ">
                                                 <Image
                                                     width={600}
@@ -226,16 +233,21 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                                     className="max-w-full max-h-112 object-contain"
                                                 />
                                             </div>
-                                        </div>
+                                        </motion.div>
 
                                         {/* Second Program Card */}
-                                        <div className="order-2 md:order-3   w-full xl:w-9/12 mx-auto" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                        <motion.div className="order-2 md:order-3   w-full xl:w-9/12 mx-auto"
+                                            initial={{ opacity: 0, x: 60 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                                            viewport={{ once: true, amount: 0.2 }}
+                                        >
                                             <div className="flex flex-col items-center text-center p-5 lg:p-7 bg-flagship-program-box-bg border border-orange-bg rounded-3xl shadow-sm hover:shadow-md transition-shadow min-h-auto md:min-h-70  md:mb-6  justify-center w-full">
                                                 <div className="h-20 flex items-center justify-center mb-6">
                                                     <Image
                                                         width={600}
                                                         height={800} quality={100}
-                                                        src={`${path}/images/${tab.cards[1].logo}`} 
+                                                        src={`${path}/images/${tab.cards[1].logo}`}
                                                         alt={tab.cards[1].alt} className="h-20 max-w-36 object-contain" />
 
                                                 </div>
@@ -251,7 +263,7 @@ const handleTabClick = (index: number, isMobile: boolean = false) => {
                                                     {tab.cards[1].buttonText || "Know More"}
                                                 </Button>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </div>

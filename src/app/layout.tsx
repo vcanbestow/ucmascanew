@@ -3,8 +3,7 @@ import { Poppins } from 'next/font/google';
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
-import AOSProvider from "@/components/UI/AOSProvider"; 
+}) 
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
@@ -29,11 +28,11 @@ export default function RootLayout({
     <html lang="en" className="overflow-x-hidden!">
       <body className={`${poppins.className} overflow-x-hidden!`}>
         <Header />
-        <AOSProvider>
+       
         <main className="">
           {children}
         </main>
-        </AOSProvider>
+       
         <Footer />
         <BackToTop />
       </body>

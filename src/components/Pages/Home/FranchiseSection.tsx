@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import SectionTitle from "@/components/UI/SectionTitle";
@@ -166,11 +166,12 @@ export default function FranchiseSection() {
             <div className="relative z-10 flex items-center flex-col-reverse xl:flex-col   ">
 
                 {/* LEFT COLUMN: Woman Image (Spans 4 cols) */}
-                <div
+                <motion.div
                     className="h-full xl:h-4/5 2xl:h-10/12 3xl:h-full w-11/12 sm:w-96 xl:w-auto xl:absolute bottom-0 left-0 pointer-events-none"
-                    data-aos="fade-right"
-                    data-aos-delay="200"
-                    data-aos-duration="1000"
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                    viewport={{ once: true, amount: 0.2 }}
                 >
                     {/* 1. Mobile Image: Desktop (xl) par hide ho jayegi */}
                     <Image
@@ -191,13 +192,18 @@ export default function FranchiseSection() {
                         alt="UCMAS Representative Desktop"
                         className="hidden xl:block h-full w-auto object-bottom drop-shadow-[0_1.25rem_1.875rem_rgba(0,0,0,0.6)] z-10"
                     />
-                </div>
+                </motion.div>
 
                 <div className="my-container  grid grid-cols-1 xl:grid-cols-12 gap-10 lg:gap-6 items-stretch pb-10 lg:pb-16">
-                    <div className="xl:col-span-2 flex flex-col md:flex-row  justify-center mb-5 xl:flex-col xl:col-start-4 items-center" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                    <div className="xl:col-span-2 flex flex-col md:flex-row  justify-center mb-5 xl:flex-col xl:col-start-4 items-center" >
                         {statsData.map((stat, index) => (
                             <div key={stat.id} className="relative flex flex-col md:flex-row xl:flex-col items-center text-center w-full">
-                                <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                <motion.div
+                                    initial={{ opacity: 0, x: 60 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                >
                                     <h3 className="text-5xl font-bold text-ucmas-counter-franchise-yellow leading-none tracking-tight drop-shadow-md">
                                         <AnimatedNumber
                                             end={stat.value}
@@ -212,7 +218,7 @@ export default function FranchiseSection() {
                                             <span> {stat.label2}</span>
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Connecting Vertical Line */}
                                 {index !== statsData.length - 1 && (
@@ -222,24 +228,35 @@ export default function FranchiseSection() {
                         ))}
                     </div>
 
-                    <div className="xl:col-span-7 xl:ps-16 xl:col-start-6 flex flex-col justify-center  w-full pb-10 lg:pb-0 z-20" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                    <div className="xl:col-span-7 xl:ps-16 xl:col-start-6 flex flex-col justify-center  w-full pb-10 lg:pb-0 z-20"
+                       
+                    >
                         {/* 2x2 Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full" >
-                            {franchiseeData.map((person) => (
-                                <div
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+                            {franchiseeData.map((person, index) => (
+                                <motion.div
                                     key={person.id}
                                     onClick={() => setActiveVideoUrl(person.videoUrl)}
                                     className="cursor-pointer group rounded-2xl border border-[#3b4c75] overflow-hidden shadow-lg flex flex-col transition-transform hover:scale-[1.02] duration-300"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    // Index multiply karne se pehla card 0s delay, dusra 0.15s delay, teesra 0.3s delay lega
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: index * 0.15,
+                                        // ease: [0.16, 1, 0.3, 1]
+                                    }}
+                                    viewport={{ once: true, amount: 0.15 }}
                                 >
                                     {/* Image Section */}
-                                    <div className=" w-full h-36 md:h-44   lg:h-58 xl:h-40 2xl:h-50 3xl:h-55 overflow-hidden relative">
+                                    <div className="w-full h-36 md:h-44 lg:h-58 xl:h-40 2xl:h-50 3xl:h-55 overflow-hidden relative">
                                         <Image
                                             width={600}
                                             height={800}
                                             quality={100}
                                             src={`${path}/images/${person.image}`}
                                             alt={person.name}
-                                            className="w-full h-full transition-transfor object-cover duration-500 group-hover:scale-110"
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                             loading="lazy"
                                         />
                                         {/* Play Button Overlay */}
@@ -269,7 +286,7 @@ export default function FranchiseSection() {
                                             </span>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
 

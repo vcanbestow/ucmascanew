@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import { MoveRight, Play, Pause } from "lucide-react"; // Added Play/Pause icons for the video UI
@@ -20,14 +20,23 @@ export default function CtaVideoHero() {
     };
 
     return (
-        <div className="relative w-full lg:min-h-56 bg-(--brand-navy-dark,#0B1A30) overflow-hidden flex flex-col lg:flex-row lg:items-stretch group/hero"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+        <motion.div className="relative w-full lg:min-h-56 bg-(--brand-navy-dark,#0B1A30) overflow-hidden flex flex-col lg:flex-row lg:items-stretch group/hero"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.2 }}>
 
             <div
                 className="hidden lg:block absolute top-0 left-0 bottom-0 w-[53.5%] z-10 bg-white pointer-events-none md:[clip-path:polygon(0%_0%,99.1%_0%,88%_100%,0_100%)]"
             />
 
-            <div
-                className="relative lg:absolute lg:top-0 lg:left-0 lg:bottom-0 w-full lg:w-[53%]  h-auto z-20  overflow-hidden group/video md:[clip-path:polygon(0_0,100%_0,85%_100%,0_100%)]" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500" >
+            <motion.div
+                className="relative lg:absolute lg:top-0 lg:left-0 lg:bottom-0 w-full lg:w-[53%]  h-auto z-20  overflow-hidden group/video md:[clip-path:polygon(0_0,100%_0,85%_100%,0_100%)]"
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
+            >
                 {/* <div className="w-full h-full relative bg-[url('/images/Banner-cta-bg.webp')] bg-cover bg-center"> */}
                 <div className="w-full h-full relative">
                     <video
@@ -64,7 +73,7 @@ export default function CtaVideoHero() {
                         <Pause className="w-4 h-4" /> Click to pause
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* ========================================= */}
             {/* 3. RIGHT CTA PANEL                        */}
@@ -96,6 +105,6 @@ export default function CtaVideoHero() {
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     );
 }

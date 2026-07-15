@@ -5,7 +5,7 @@ import Button from "@/components/UI/Button"; // Adjust path if necessary
 import Link from "next/link";
 import Image from "next/image";
 import { MathStruggle, FocusAttention, MemorIcon, Confidence, MoreChallenge, Foundation, BulbCircleWhiteIcon, BrainCircleWhiteIcon, TargetCircleWhiteIcon, BadgeCircleWhiteIcon } from "@/components/UI/Icons";
-
+import { motion } from "framer-motion";
 import { path } from "@/utils/path"; // Import the path utility
 import {
   Brain,
@@ -668,8 +668,12 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
   const paragraphProps = getColorProps(content.paragraphColor);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12  gap-8 md:gap-12 items-center" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-      <div className="col-span-1 lg:col-span-7">
+    <div className="grid grid-cols-1 lg:grid-cols-12  gap-8 md:gap-12 items-center"
+     >
+      <motion.div initial={{ opacity: 0, x: -60 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, amount: 0.2 }} className="col-span-1 lg:col-span-7">
         <div className="  lg:mb-14 mb-6">
           <h2 className=" mb-3 text-2xl md:text-3xl font-extrabold leading-tight">
             <span {...getColorProps(content.headingPart1Color)}>
@@ -822,10 +826,14 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
                         <ArrowRight className="w-5 h-5" style={{ color: content.button.arrowColor }} />
                     </Button>
                 </div> */}
-      </div>
-      <div
+      </motion.div>
+      <motion.div
         className="relative lg:col-span-5 xl:col-span-4 xl:col-start-9 2xl:col-span-3 2xl:col-start-10 group cursor-pointer w-full max-w-xl mx-auto"
-        onClick={() => setIsVideoModalOpen(true)} data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
+        onClick={() => setIsVideoModalOpen(true)}
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="relative rounded-2xl lg:rounded-3xl lg:h-96 lg:min-h-96 overflow-hidden aspect-[4/3] w-full">
           <Image
@@ -845,7 +853,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

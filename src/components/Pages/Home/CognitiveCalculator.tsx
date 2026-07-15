@@ -5,7 +5,7 @@ import TimelineRoadmap from "@/components/Pages/Home/TimelineRoadmap";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { path } from "@/utils/path";
-
+import { motion } from "framer-motion";
 export default function CognitiveCalculator() {
   const [mounted, setMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -74,7 +74,7 @@ export default function CognitiveCalculator() {
               <>
                 When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.
                 <br />
-                <br className="" />
+                <br />
                 Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.
               </>
             ]}
@@ -96,14 +96,22 @@ export default function CognitiveCalculator() {
 
               {/* Left Side Kid Image - Absolute Outside Left */}
               <div className="absolute -left-11.25 lg:-left-25 xl:-left-22 2xl:-left-21.25 bottom-6 h-[75%] max-h-70 md:max-h-85 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
-                <Image
-                  width={400}
-                  height={500}
-                  src={`${path}/images/Child Left.webp`}
-                  alt="Girl Left"
-                  className="h-full w-auto object-contain object-bottom"
-                  priority data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"
-                />
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="h-full w-full"
+                >
+                  <Image
+                    width={400}
+                    height={500}
+                    src={`${path}/images/Child Left.webp`}
+                    alt="Girl Left"
+                    className="h-full w-auto object-contain object-bottom"
+                    priority
+                  />
+                </motion.div>
               </div>
 
               {/* MAIN COMPONENT BOX BOX */}
@@ -243,17 +251,23 @@ export default function CognitiveCalculator() {
 
               {/* Right Side Kid Image - Absolute Outside Right */}
               <div className="absolute -right-11.25  lg:-right-43.75 xl:-right-42.75 2xl:-right-41.5 bottom-6 h-[72%] max-h-65 md:max-h-72.5 z-25 pointer-events-none hidden lg:block">
-                <Image
-                  width={400}
-                  height={500}
-
-                  src={`${path}/images/Child Right.webp`}
-
-                  alt="Girl Right"
-                  className="h-full w-auto object-contain object-bottom"
-                  priority
-                  quality={100} data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
-                />
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="h-full w-full"
+                >
+                  <Image
+                    width={400}
+                    height={500}
+                    src={`${path}/images/Child Right.webp`}
+                    alt="Girl Right"
+                    className="h-full w-auto object-contain object-bottom"
+                    priority
+                    quality={100}
+                  />
+                </motion.div>
               </div>
             </div>
           </div>

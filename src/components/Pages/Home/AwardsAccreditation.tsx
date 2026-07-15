@@ -2,7 +2,7 @@
 
 import SectionTitle from "@/components/UI/SectionTitle";
 import Image from 'next/image';
-import { animate } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import React, { useEffect, useState, useRef } from 'react';
 import { path } from "@/utils/path";
 
@@ -84,18 +84,23 @@ export default function AwardsAccreditation() {
                     <div className="w-full overflow-hidden">
                         <div className="flex w-max animate-marqueeawards">
                             {doubleStats.map((stat, index) => {
-                                // Calculate staggered delay based on original array length
-                                const staggeredDelay = (index % statsData.length) * 150;
-                                // Alternating duration timing
-                                const customDuration = durations[index % durations.length];
+                                // Calculate staggered delay based on original array length (Converted to seconds for Framer Motion)
+                                const staggeredDelay = ((index % statsData.length) * 150) / 1000;
+                                // Alternating duration timing (Converted from ms to seconds)
+                                const customDuration = durations[index % durations.length] / 1000;
 
                                 return (
-                                    <div
+                                    <motion.div
                                         key={index}
                                         className="w-[20rem] shrink-0" 
-                                        data-aos="fade-up" 
-                                        data-aos-delay={staggeredDelay} 
-                                        data-aos-duration={customDuration}
+                                        initial={{ opacity: 0, y: 40 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ 
+                                            duration: customDuration, 
+                                            delay: staggeredDelay, 
+                                            ease: [0.16, 1, 0.3, 1] 
+                                        }}
+                                        viewport={{ once: true, amount: 0.1 }}
                                     >
                                         <div className="text-center">
                                             <div className="h-32 flex items-center justify-center mb-5">
@@ -116,7 +121,7 @@ export default function AwardsAccreditation() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </div>

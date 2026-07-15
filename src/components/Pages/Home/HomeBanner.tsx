@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules'; // Removed Navigation module since we are using custom
 import React, { useState } from "react";
 import type { Swiper as SwiperType } from 'swiper'; // Import SwiperType for TypeScript
-
+import { motion } from "framer-motion";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from 'next/image';
@@ -54,7 +54,7 @@ export default function BannerSlider() {
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
     return (
-        <div className="w-full relative overflow-hidden group" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1500">
+        <div className="w-full relative overflow-hidden group"  >
             {/* Previous Button */}
             <button
                 onClick={() => swiperInstance?.slidePrev()}
@@ -77,40 +77,43 @@ export default function BannerSlider() {
                 </svg>
             </button>
 
-
-            <Swiper
-                onSwiper={setSwiperInstance} // This connects your custom buttons to Swiper
-                spaceBetween={0}
-                slidesPerView={1}
-                loop={true}
-                autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                }}
-                modules={[Autoplay, Pagination]} // Removed default Navigation
-                className="w-full"
-            >
-                {slides.map((slide) => (
-                    <SwiperSlide key={slide.id}>
-                        <div className="relative w-full">
-                            <Link href={slide.bannerlink} className="w-full h-auto"  >
-                                <Image
-                                    src={`${path}/images/${slide.image}`}
-                                    alt="Slide Image"
-                                    width={1920}
-                                    height={600}
-                                    quality={100}
-                                    className="w-full h-auto"
-                                />
-                            </Link>
-                            {/* <div
+            <motion.div initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.2 }}>
+                <Swiper
+                    onSwiper={setSwiperInstance} // This connects your custom buttons to Swiper
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    loop={true}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
+                    modules={[Autoplay, Pagination]} // Removed default Navigation
+                    className="w-full"
+                >
+                    {slides.map((slide) => (
+                        <SwiperSlide key={slide.id}>
+                            <div className="relative w-full">
+                                <Link href={slide.bannerlink} className="w-full h-auto"  >
+                                    <Image
+                                        src={`${path}/images/${slide.image}`}
+                                        alt="Slide Image"
+                                        width={1920}
+                                        height={600}
+                                        quality={100}
+                                        className="w-full h-auto"
+                                    />
+                                </Link>
+                                {/* <div
                                     className="absolute inset-0 bg-cover bg-center"
                                     style={{ backgroundImage: `url(${slide.image})` }}
                                 /> */}
 
-                            {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div> */}
+                                {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div> */}
 
-                            {/* <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center gap-6">
+                                {/* <div className="relative z-10 max-w-3xl px-6 flex flex-col items-center gap-6">
                                     <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-lg">
                                         {slide.title}
                                     </h1>
@@ -142,10 +145,11 @@ export default function BannerSlider() {
                                         {slide.btnText}
                                     </Button>
                                 </div> */}
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </motion.div>
         </div>
     );
 }

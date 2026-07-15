@@ -1,19 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from 'next/image';
-
 import { motion, AnimatePresence } from "framer-motion";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Download from "yet-another-react-lightbox/plugins/download";
-import Captions from "yet-another-react-lightbox/plugins/captions";
-import { Eye, Layers, SlidersHorizontal } from "lucide-react";
-import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/captions.css";
+
+// LightGallery Core & Plugin Components
+import LightGallery from 'lightgallery/react';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
+import lgAutoplay from 'lightgallery/plugins/autoplay';
+import lgFullscreen from 'lightgallery/plugins/fullscreen';
+import lgRotate from 'lightgallery/plugins/rotate';
+
+// LightGallery Modular Stylesheets
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+import 'lightgallery/css/lg-autoplay.css';
+import 'lightgallery/css/lg-fullscreen.css';
+import 'lightgallery/css/lg-rotate.css';
+
+import {
+  Search,
+  Maximize2,
+  FolderHeart,
+  Sparkles
+} from "lucide-react";
+
 const CATEGORIES = ["All", "STEM", "Abacus", "Campus Life"];
+
 const GALLERY_IMAGES = [
   {
     id: 1,
@@ -61,128 +76,145 @@ const GALLERY_IMAGES = [
 
 export default function AdvancedMegaGallery() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [index, setIndex] = useState(-1); // -1 means lightbox closed
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Category sorting computation
-  const filteredItems = activeCategory === "All"
-    ? GALLERY_IMAGES
-    : GALLERY_IMAGES.filter(item => item.category === activeCategory);
+  const filteredItems = useMemo(() => {
+    return GALLERY_IMAGES.filter((item) => {
+      const matchesCategory = activeCategory === "All" || item.category === activeCategory;
+      const matchesSearch =
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase());
 
-  // Formatting assets specifically for Yet-Another-React-Lightbox interface rules
-  const slides = filteredItems.map((item) => ({
-    src: item.src,
-    title: item.title,
-    description: item.description,
-  }));
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, searchQuery]);
 
   return (
-    <section className="w-full bg-slate-50 py-16 px-4 sm:px-8 md:px-16">
-      <div className="w-full max-w-[1920px] mx-auto">
+    <section className="w-full bg-slate-50 text-slate-800 py-20 px-4 sm:px-8 md:px-16 min-h-screen select-none">
+      <div className="my-container mx-auto space-y-10">
 
-        {/* Dynamic Navigation Headings */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-slate-200 pb-6">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-orange-bg flex items-center gap-2">
-              <Layers className="w-3.5 h-3.5" /> High Performance Space
-            </span>
-            <h2 className="text-4xl font-black text-ucmas-blue mt-1 tracking-tight">
-              Interactive <span className="text-ucmas-red italic">Media Canvas</span>
-            </h2>
-          </div>
+        {/* Navigation & Header Title Area */}
+        <div className="border-b border-slate-200 pb-6">
+          <span className="text-xs font-black uppercase tracking-widest text-amber-600 flex items-center gap-2 mb-2">
+            <Sparkles className="w-4 h-4 text-orange-500" /> High Performance Space
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Interactive <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-orange-600 italic pr-2">Media Canvas</span>
+          </h2>
+        </div>
 
-          {/* Filtering Layout Navigation */}
+        {/* Combined Sorting Controller & Search Matrix Row */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+
+          {/* Sort Left Side */}
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mr-2">
-              <SlidersHorizontal className="w-3.5 h-3.5" /> Sort:
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-2">
+              Sort:
             </span>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 ${activeCategory === cat
-                    ? "bg-orange-bg text-white shadow-[0_4px_14px_rgba(255,107,53,0.35)] scale-105"
-                    : "bg-white text-ucmas-blue border border-slate-200 hover:bg-slate-100"
+                    ? "bg-linear-to-r from-amber-500 to-orange-600 text-white shadow-[0_4px_14px_rgba(245,158,11,0.3)] scale-105"
+                    : "bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200"
                   }`}
               >
                 {cat}
               </button>
             ))}
           </div>
+
+          {/* Searchbar Right Side */}
+          <div className="relative w-full md:w-72">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
+            <input
+              type="text"
+              placeholder="Search matrices..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all"
+            />
+          </div>
         </div>
 
-        {/* Pinterest-Style Balanced Waterfall Masonry Grid */}
-        <div className="w-full columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.35 }}
-                onClick={() => setIndex(idx)}
-                className="break-inside-avoid relative w-full overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl group cursor-pointer transition-all duration-300"
-              >
-                {/* Standard Asset Image Tag */}
-                <Image
-                  quality={100}
-                  width={600}
-                  height={800}
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
+        {/* LightGallery Global Theme & Toolbar Sizing Controls Injection */}
+        <style jsx global>{`.lg-backdrop{background-color:rgb(4 7 20 / .99)!important;backdrop-filter:blur(12px)}.lg-toolbar{gap:0.85rem!important;padding-right:1.5rem!important}.lg-toolbar .lg-icon,.lg-toolbar .lg-rotate-left,.lg-toolbar .lg-rotate-right,.lg-toolbar .lg-flip-hor,.lg-toolbar .lg-flip-ver,.lg-toolbar #lg-toggle-thumb{height:2.75rem!important;width:2.75rem!important;font-size:1.25rem!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}.lg-outer .lg-thumb-outer{background-color:#020617!important;border-top:1px solid #1e293b}.lg-outer .lg-thumb-item{border-radius:10px;border:2px solid #334155!important;transition:border-color 0.2s ease}.lg-outer .lg-thumb-item.active{border-color:#f59e0b!important}`}</style>
 
-                {/* Hover Interaction Glass Mesh Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-ucmas-blue/90 via-ucmas-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-xs font-black text-white bg-orange-bg px-2.5 py-0.5 rounded-md uppercase tracking-wider">
-                      {item.category}
-                    </span>
-                    <h4 className="text-xl font-bold text-white mt-2 flex items-center gap-2 leading-tight">
-                      {item.title} <Eye className="w-4 h-4 opacity-75" />
-                    </h4>
-                    <p className="text-xs text-slate-200 mt-1.5 line-clamp-2 font-normal">
-                      {item.description}
-                    </p>
+        {/* Standard Unified LightGallery Grid Container */}
+        <AnimatePresence mode="popLayout">
+          {filteredItems.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="w-full py-28 flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-2xl text-center bg-white"
+            >
+              <FolderHeart className="w-10 h-10 text-slate-300 mb-3" />
+              <p className="text-sm font-bold text-slate-400">No assets matching filters located inside scope</p>
+            </motion.div>
+          ) : (
+            <LightGallery
+              speed={400}
+              // plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgRotate]}
+              plugins={[lgThumbnail, lgZoom]}
+              elementClassNames="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              licenseKey="0000-0000-0000-0000"
+              download={true}
+              autoplay={true}
+              slideShowAutoplay={false}
+              progressBar={true}
+              mode="lg-fade"
+              counter={true}
+              rotate={true}
+              flipHorizontal={true}
+              flipVertical={true}
+              toggleThumb={true}
+              allowMediaOverlap={true}
+            >
+              {filteredItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.src}
+                  data-src={item.src}
+                  data-sub-html={`<h4 style="font-size: 1.5rem; font-weight:900; color:#f59e0b; margin-bottom:4px;">${item.title}</h4><p style="color:#cbd5e1; font-size:0.875rem;">${item.description}</p>`}
+                  className="relative w-full overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl group cursor-pointer transition-all duration-300 aspect-4/3 block"
+                >
+                  <div className="relative w-full h-full">
+                    <Image
+                      quality={95}
+                      width={600}
+                      height={450}
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
 
-        {/* Pro Lightbox Engine Panel with Advanced Controls */}
-        <Lightbox
-          index={index}
-          slides={slides}
-          open={index >= 0}
-          close={() => setIndex(-1)}
-          // Registering Premium Feature Plugins
-          plugins={[Zoom, Slideshow, Fullscreen, Download, Captions]}
-
-          // Configuring Action Preferences
-          zoom={{
-            maxZoomPixelRatio: 4, // Up to 400% zoom capability
-            scrollToZoom: true,   // Desktop mouse wheel scroll to zoom
-          }}
-          slideshow={{
-            autoplay: false,
-            delay: 4000,          // 4 seconds interval between images
-          }}
-          captions={{
-            descriptionMaxLines: 3,
-          }}
-
-          // Customizing Tailwind Styles mapping over Lightbox variables
-          styles={{
-            container: { backgroundColor: "rgba(10, 15, 30, 0.96)" }, // Deep rich dark blur profile
-            captionsTitle: { fontSize: "1.5rem", fontWeight: "700", color: "#ffffff" },
-            captionsDescription: { color: "#94a3b8", fontSize: "0.875rem" },
-          }}
-        />
+                  {/* Hover Interaction Overlay */}
+                  <div className="absolute inset-0 bg-linear-to-t from-white via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 space-y-2">
+                      <span className="text-xs font-black text-white bg-amber-500 px-2.5 py-0.5 rounded uppercase tracking-wider w-max inline-block">
+                        {item.category}
+                      </span>
+                      <h4 className="text-xl font-bold text-slate-900 flex items-center justify-between gap-2 leading-tight">
+                        {item.title}
+                        <span className="bg-white p-1.5 rounded-lg border border-slate-200 text-amber-600 shadow-sm">
+                          <Maximize2 className="w-3.5 h-3.5" />
+                        </span>
+                      </h4>
+                      <p className="text-xs text-slate-600 line-clamp-2 font-normal">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </LightGallery>
+          )}
+        </AnimatePresence>
 
       </div>
     </section>

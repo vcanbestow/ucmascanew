@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import SectionTitle from "@/components/UI/SectionTitle";
 import React, { useRef, useState } from "react";
 import Link from "next/link";
@@ -101,10 +101,13 @@ export default function UpcomingWorkshops() {
           {/* Navigation Controls (Top Right) */}
           <div className="flex justify-center md:justify-end mb-6">
             <div className="flex gap-2">
-              <button
+              <motion.button
                 onClick={() => swiperInstance?.slidePrev()}
                 className="flex items-center justify-center w-10 h-10 rounded-xl border border-ucmas-light-sky hover:bg-cyan-50 hover:border-ucmas-light-sky transition-colors bg-white shadow-sm cursor-pointer"
-                aria-label="Previous slide"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
+                aria-label="Previous slide" initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,12 +123,15 @@ export default function UpcomingWorkshops() {
                 >
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 onClick={() => swiperInstance?.slideNext()}
                 className="flex items-center justify-center w-10 h-10 rounded-xl border border-ucmas-light-sky hover:bg-cyan-50 hover:border-ucmas-light-sky transition-colors bg-white shadow-sm cursor-pointer"
                 aria-label="Next slide"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1100"
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -141,13 +147,18 @@ export default function UpcomingWorkshops() {
                 >
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
 
-        <div className="my-container 3xl:max-w-full lg:!px-2">   
-          <div className="w-full"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <div className="my-container 3xl:max-w-full lg:!px-2">
+          <motion.div className="w-full"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <Swiper
               modules={[Navigation, Autoplay]}
               onSwiper={setSwiperInstance}
@@ -239,10 +250,13 @@ export default function UpcomingWorkshops() {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="text-center my-container"   data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+      <motion.div className="text-center my-container" initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, amount: 0.2 }}>
         <Button
           variant="ucmas_red_btn_outline"
           href="#"
@@ -252,7 +266,7 @@ export default function UpcomingWorkshops() {
         >
           View All Events
         </Button>
-      </div>
+      </motion.div>
     </section>
   );
 }
