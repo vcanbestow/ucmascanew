@@ -39,7 +39,7 @@ const franchiseeData: Franchisee[] = [
         location: "AJAX Franchise",
         yearsNum: "20+",
         yearsText: "Years",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+        image: "Anton.webp",
         videoUrl: "https://www.youtube.com/embed/w1_sShwseIc?autoplay=1",
     },
     {
@@ -48,7 +48,7 @@ const franchiseeData: Franchisee[] = [
         location: "Scarborough Franchise",
         yearsNum: "13+",
         yearsText: "Years",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+        image: "Shankar.webp",
         videoUrl: "https://www.youtube.com/embed/w1_sShwseIc?autoplay=1",
     },
     {
@@ -57,7 +57,7 @@ const franchiseeData: Franchisee[] = [
         location: "Calgary Franchise",
         yearsNum: "10+",
         yearsText: "Years",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+        image: "Raj.webp",
         videoUrl: "https://www.youtube.com/embed/w1_sShwseIc?autoplay=1",
     },
     {
@@ -66,7 +66,7 @@ const franchiseeData: Franchisee[] = [
         location: "British Columbia Franchise",
         yearsNum: "08+",
         yearsText: "Years",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+        image: "Krishna.webp",
         videoUrl: "https://www.youtube.com/embed/w1_sShwseIc?autoplay=1",
     },
 ];
@@ -166,14 +166,30 @@ export default function FranchiseSection() {
             <div className="relative z-10 flex items-center flex-col-reverse xl:flex-col   ">
 
                 {/* LEFT COLUMN: Woman Image (Spans 4 cols) */}
-                <div className="h-full xl:h-4/5 2xl:h-10/12 3xl:h-full  xl:absolute bottom-0 left-0  pointer-events-none  " data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                <div
+                    className="h-full xl:h-4/5 2xl:h-10/12 3xl:h-full w-11/12 sm:w-96 xl:w-auto xl:absolute bottom-0 left-0 pointer-events-none"
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                >
+                    {/* 1. Mobile Image: Desktop (xl) par hide ho jayegi */}
+                    <Image
+                        width={600} // Mobile ke hisab se width adjust kar sakte hain
+                        height={1200}
+                        quality={100}
+                        src={`${path}/images/Megha-Image.webp`}
+                        alt="UCMAS Representative Mobile"
+                        className="block xl:hidden h-full w-auto object-bottom drop-shadow-[0_1.25rem_1.875rem_rgba(0,0,0,0.6)] z-10"
+                    />
+
+                    {/* 2. Desktop Image: Mobile par hidden rahegi, xl screen par dikhegi */}
                     <Image
                         width={1200}
                         height={2400}
                         quality={100}
                         src={`${path}/images/megha.webp`}
-                        alt="UCMAS Representative"
-                        className="h-full w-auto  object-bottom drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)] z-10"
+                        alt="UCMAS Representative Desktop"
+                        className="hidden xl:block h-full w-auto object-bottom drop-shadow-[0_1.25rem_1.875rem_rgba(0,0,0,0.6)] z-10"
                     />
                 </div>
 
@@ -216,14 +232,14 @@ export default function FranchiseSection() {
                                     className="cursor-pointer group rounded-2xl border border-[#3b4c75] overflow-hidden shadow-lg flex flex-col transition-transform hover:scale-[1.02] duration-300"
                                 >
                                     {/* Image Section */}
-                                    <div className=" w-full h-40 lg:h-52 overflow-hidden relative">
+                                    <div className=" w-full h-36 md:h-44   lg:h-58 xl:h-40 2xl:h-50 3xl:h-55 overflow-hidden relative">
                                         <Image
                                             width={600}
                                             height={800}
                                             quality={100}
                                             src={`${path}/images/${person.image}`}
                                             alt={person.name}
-                                            className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                                            className="w-full h-full transition-transfor object-cover duration-500 group-hover:scale-110"
                                             loading="lazy"
                                         />
                                         {/* Play Button Overlay */}

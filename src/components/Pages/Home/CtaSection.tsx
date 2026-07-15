@@ -48,10 +48,10 @@ export default function CtaVideoHero() {
                             }`}
                         onClick={togglePlay}
                     >
-                        <div className="w-20 h-20 bg-[#E63946] rounded-full flex items-center justify-center shadow-[0_12px_30px_rgba(230,57,70,0.6)] hover:bg-[#D62828] hover:scale-110 hover:shadow-[0_15px_35px_rgba(230,57,70,0.8)] transition-all duration-300 border-[.1875rem] border-white/20">
+                        <div className="w-20 h-20 bg-[#E63946] rounded-full flex items-center justify-center shadow-[0_.75rem_1.875rem_rgba(230,57,70,0.6)] hover:bg-[#D62828] hover:scale-110 hover:shadow-[0_.9375rem_2.1875rem_rgba(230,57,70,0.8)] transition-all duration-300 border-[.1875rem] border-white/20">
                             <Play fill="currentColor" className="text-white w-8 h-8 ml-1" />
                         </div>
-                        <span className="text-white text-[0.95rem] font-semibold tracking-.0625rem uppercase mt-3.75 [text-shadow:0_2px_8px_rgba(0,0,0,0.5)] opacity-90 pointer-events-none">
+                        <span className="text-white text-[0.95rem] font-semibold tracking-.0625rem uppercase mt-3.75 [text-shadow:0_.125rem_.5rem_rgba(0,0,0,0.5)] opacity-90 pointer-events-none">
                             Watch Video
                         </span>
                     </div>
@@ -76,7 +76,7 @@ export default function CtaVideoHero() {
                 <div className="absolute -bottom-10 -right-10 w-120 text-center h-120 pointer-events-none opacity-30 z-0 animate-pulse bg-[radial-gradient(circle,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
                 <div className="  ">
 
-                    <h2 className="relative z-10 font-semibold text-white leading-8 text-2xl  mb-4 [text-shadow:0_2px_4px_rgba(0,0,0,0.15)] max-w-150 lg:max-w-none">
+                    <h2 className="relative z-10 font-semibold text-white leading-8 text-2xl  mb-4 [text-shadow:0_.125rem_.25rem_rgba(0,0,0,0.15)] max-w-150 lg:max-w-none">
                         Nurturing National Champions with <br className="hidden sm:block" /> Harvard & Stanford Proven Methods
                     </h2>
 

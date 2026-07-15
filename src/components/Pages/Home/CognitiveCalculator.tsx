@@ -1,6 +1,7 @@
 'use client';
 
 import SectionTitle from "@/components/UI/SectionTitle";
+import TimelineRoadmap from "@/components/Pages/Home/TimelineRoadmap";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { path } from "@/utils/path";
@@ -84,12 +85,14 @@ export default function CognitiveCalculator() {
           />
         </div>
 
-        {/* MAIN LAYOUT WRAPPER */}
+         {/* <div>
+          <TimelineRoadmap />
+         </div> */}
 
 
         <div className="my-container  grid grid-cols-12 relative mt-6 lg:mt-10">
           <div className="relative lg:col-start-3 col-span-12 lg:col-span-8">
-            <div className="relative flex flex-col md:flex-row min-h-95 bg-[#162E51] rounded-tl-4xl rounded-tr-3xl p-8 md:p-12 lg:p-10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] z-10">
+            <div className="relative flex flex-col md:flex-row min-h-95 bg-calculator-dark-blue rounded-tl-4xl rounded-tr-3xl p-8 md:p-12 lg:p-10 shadow-[0_.625rem_1.875rem_rgba(0,0,0,0.25)] z-10">
 
               {/* Left Side Kid Image - Absolute Outside Left */}
               <div className="absolute -left-11.25 lg:-left-25 xl:-left-22 2xl:-left-21.25 bottom-6 h-[75%] max-h-70 md:max-h-85 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
@@ -138,7 +141,7 @@ export default function CognitiveCalculator() {
                 {/* Dynamic Steps Router Panels Container */}
                 <div className="w-full h-full relative flex flex-col">
 
-                  <div className="flex-grow">
+                  <div className="grow">
                     {/* Step Slide 1: Inverted Vertical Counter */}
                     {currentSlide === 0 && (
                       <div className="animate-fade-in flex h-full justify-center items-center gap-10">
@@ -177,11 +180,11 @@ export default function CognitiveCalculator() {
                           onChange={(e) => setSelectedClass(e.target.value)}
                           className="bg-transparent border-2 border-white/20 text-white rounded-xl px-4 py-3 w-[85%] mx-auto block outline-none focus:border-[#9AD5D6] focus:bg-white/5 transition-colors cursor-pointer"
                         >
-                          <option value="" disabled className="bg-[#162E51]">Select Class</option>
+                          <option value="" disabled className="bg-calculator-dark-blue">Select Class</option>
                           {[1, 2, 3, 4, 5].map((val) => (
-                            <option key={val} value={val} className="bg-[#162E51]">Class {val}</option>
+                            <option key={val} value={val} className="bg-calculator-dark-blue">Class {val}</option>
                           ))}
-                          <option value="other" className="bg-[#162E51]">Other</option>
+                          <option value="other" className="bg-calculator-dark-blue">Other</option>
                         </select>
                       </div>
                     )}
@@ -218,7 +221,7 @@ export default function CognitiveCalculator() {
                   <button
                     onClick={handleNext}
                     disabled={currentSlide === totalSlides}
-                    className="mx-auto mt-8 px-10 lg:px-16 py-3 bg-[#9AD5D6] text-[#162E51] font-bold text-base rounded-xl flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#b5e2e3] hover:-translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none w-fit cursor-pointer"
+                    className="mx-auto mt-8 px-10 lg:px-16 py-3 bg-[#9AD5D6] text-calculator-dark-blue font-bold text-base rounded-xl flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#b5e2e3] hover:-translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none w-fit cursor-pointer"
                   >
                     <span className="tracking-wide">
                       {currentSlide === totalSlides ? 'Submitted' : currentSlide === totalSlides - 1 ? 'Finish' : 'Next'}

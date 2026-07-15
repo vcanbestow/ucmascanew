@@ -109,7 +109,7 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] flex flex-col ">
+    <header className="w-full sticky top-0 z-50 bg-white shadow-[0_.25rem_1.25rem_-.625rem_rgba(0,0,0,0.1)] flex flex-col ">
       {/* Hidden container needed by Google Translate engine core mechanics */}
       <div id="google_translate_element" className="hidden" />
 

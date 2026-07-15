@@ -4,7 +4,7 @@ import SectionTitle from "@/components/UI/SectionTitle";
 import Button from "@/components/UI/Button"; // Adjust path if necessary
 import Link from "next/link";
 import Image from "next/image";
-import { MathStruggle, FocusAttention, MemorIcon, Confidence, MoreChallenge, Foundation, BulbCircleWhiteIcon } from "@/components/UI/Icons";
+import { MathStruggle, FocusAttention, MemorIcon, Confidence, MoreChallenge, Foundation, BulbCircleWhiteIcon, BrainCircleWhiteIcon, TargetCircleWhiteIcon, BadgeCircleWhiteIcon } from "@/components/UI/Icons";
 
 import { path } from "@/utils/path"; // Import the path utility
 import {
@@ -54,19 +54,19 @@ const TAB_DATA = [
       paragraphColor: "text-flagship-program-box-bg",
       features: [
         {
-          icon: <BulbCircleWhiteIcon className="h-10 w-10" />,
+          icon: <BulbCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Visualization turns numbers and information into pictures ",
         },
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <BrainCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Regular practice makes recalling information quick & easy",
         },
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <TargetCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Repetition strengthens long-term memory power",
         },
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <BadgeCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Sharper memory helps in every subject at school ",
         },
       ],
@@ -113,19 +113,19 @@ const TAB_DATA = [
       paragraphColor: "text-footer-bg",
       features: [
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <BulbCircleWhiteIcon className="h-12 w-12" color="text-footer-bg" />,
           text: "Speed writing exercise for improved focus",
         },
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <BrainCircleWhiteIcon className="h-12 w-12" color="text-footer-bg" />,
           text: "Flash card exercises build active attention",
         },
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <TargetCircleWhiteIcon className="h-12 w-12" color="text-footer-bg" />,
           text: "Faster calculations strengthen sustained concentration",
         },
         {
-          icon: <MathStruggle className="h-10 w-10" />,
+          icon: <BadgeCircleWhiteIcon className="h-12 w-12" color="text-footer-bg" />,
           text: "Children stay attentive longer, both in class and at home",
         },
       ],
@@ -171,19 +171,19 @@ const TAB_DATA = [
       paragraphColor: "text-flagship-program-box-bg",
       features: [
         {
-          icon: <TrendingUp className="w-6 h-6" />,
+          icon: <BulbCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Visualization turns numbers and information into pictures ",
         },
         {
-          icon: <Brain className="w-6 h-6" />,
+          icon: <BrainCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Regular practice makes recalling information quick & easy",
         },
         {
-          icon: <Target className="w-6 h-6" />,
+          icon: <TargetCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Repetition strengthens long-term memory power",
         },
         {
-          icon: <Award className="w-6 h-6" />,
+          icon: <BadgeCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Sharper memory helps in every subject at school ",
         },
       ],
@@ -230,19 +230,19 @@ const TAB_DATA = [
       paragraphColor: "text-ucmas-blue",
       features: [
         {
-          icon: <TrendingUp className="w-6 h-6" />,
+          icon: <BulbCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Children perform math calculations beyond their grade level",
         },
         {
-          icon: <Brain className="w-6 h-6" />,
+          icon: <BrainCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Stronger performance naturally leads to more confidence",
         },
         {
-          icon: <Target className="w-6 h-6" />,
+          icon: <TargetCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Children become more active and participate in class activities",
         },
         {
-          icon: <Award className="w-6 h-6" />,
+          icon: <BadgeCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Kids carry this confidence into everyday life, not just school ",
         },
       ],
@@ -288,19 +288,19 @@ const TAB_DATA = [
       paragraphColor: "text-ucmas-blue",
       features: [
         {
-          icon: <TrendingUp className="w-6 h-6" />,
+          icon: <BulbCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Timed challenges push children past their skill level",
         },
         {
-          icon: <Brain className="w-6 h-6" />,
+          icon: <BrainCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Competitions test skills against peers ",
         },
         {
-          icon: <Target className="w-6 h-6" />,
+          icon: <TargetCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Advanced levels keep fast learners engaged and growing",
         },
         {
-          icon: <Award className="w-6 h-6" />,
+          icon: <BadgeCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Children build a real drive to compete and improve",
         },
       ],
@@ -347,19 +347,19 @@ const TAB_DATA = [
       paragraphColor: "#FFFFFF",
       features: [
         {
-          icon: <TrendingUp className="w-6 h-6" />,
+          icon: <BulbCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Establish a strong foundation for learning in the early years ",
         },
         {
-          icon: <Brain className="w-6 h-6" />,
+          icon: <BrainCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Stimulate brain development by making math fun ",
         },
         {
-          icon: <Target className="w-6 h-6" />,
+          icon: <TargetCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Help children make a smooth transition to school settings",
         },
         {
-          icon: <Award className="w-6 h-6" />,
+          icon: <BadgeCircleWhiteIcon className="h-12 w-12" color="#ffffff" />,
           text: "Encourage application of concepts in a real-time environment",
         },
       ],
@@ -475,7 +475,7 @@ export default function DynamicTabSection() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTabId(item.id)}
-                  className={`flex-1 flex flex-col hover:shadow=[0_8px_25px_#1e2e5414] mb-6  pt-10 h-60 pb-6 cursor-pointer text-left relative outline-none p-4 rounded-t-3xl ${isActive ? "translate-y-6 z-20" : " hover:-mt-2 mt-0 bg-white border rounded-3xl border-gray-100 hover:bg-gray-50"}`}
+                  className={`flex-1 flex flex-col hover:shadow=[0_.5rem_1.5625rem_#1e2e5414] mb-6  pt-10 h-60 pb-6 cursor-pointer text-left relative outline-none p-4 rounded-t-3xl ${isActive ? "translate-y-6 z-20" : " hover:-mt-2 mt-0 bg-white border rounded-3xl border-gray-100 hover:bg-gray-50"}`}
                   style={{
                     backgroundColor: isActive ? item.tab.bgColor : "#FFFFFF",
                   }}
@@ -681,7 +681,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
           </h2>
 
           <p
-            className={`lg:mb-10 mb-6 font-medium leading-relaxed ${paragraphProps.className}`}
+            className={`lg:mb-10 mb-6 leading-relaxed ${paragraphProps.className}`}
             style={paragraphProps.style}
           >
             {content.paragraph}
@@ -728,10 +728,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
                     className={` flex items-center justify-center shrink-0 ${borderProps.className}`}
                     style={borderProps.style}
                   >
-                    {/* Directly rendering the icon from TAB_DATA features. 
-            Aapne array me pehle se hi className="h-10 w-10" ya custom sizes de rakhi hain,
-            isliye hum bina kisi force-override ke direct render kar rahe hain.
-          */}
+
                     {f.icon && <div className="shrink-0 flex items-center justify-center">{f.icon}</div>}
                   </div>
 
