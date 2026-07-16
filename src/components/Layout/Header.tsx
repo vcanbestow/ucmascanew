@@ -45,7 +45,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
-  
+
   // Track selected language (Default 'en')
   const [currentLang, setCurrentLang] = useState<"en" | "fr">("en");
 
@@ -239,7 +239,7 @@ export default function Header() {
 
       {/* 3. PREMIUM MOBILE NAVIGATION BAR & DRAWER */}
       <div className="xl:hidden">
-        <div className="flex items-center justify-between p-4 bg-white">
+        <div className="my-container flex items-center justify-between p-4 bg-white">
           <Link href="/" className="focus:outline-none">
             <div className="w-auto h-11.25 flex items-center justify-center rounded">
               <Image src={`${path}/images/logo-1.webp`} alt="UCMAS Logo" width={140} height={45} className="object-contain" />
@@ -253,10 +253,10 @@ export default function Header() {
             >
               {/* <Menu className="w-6 h-6" /> */}
               <svg width="569" height="395" className="w-6 h-6" viewBox="0 0 569 395" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="231" width="338" height="65" rx="32.5" fill="#2A2A2A"/>
-<rect y="165" width="569" height="65" rx="32.5" fill="#2A2A2A"/>
-<rect x="231" y="330" width="338" height="65" rx="32.5" fill="#2A2A2A"/>
-</svg>
+                <rect x="231" width="338" height="65" rx="32.5" fill="#2A2A2A" />
+                <rect y="165" width="569" height="65" rx="32.5" fill="#2A2A2A" />
+                <rect x="231" y="330" width="338" height="65" rx="32.5" fill="#2A2A2A" />
+              </svg>
 
             </button>
           )}

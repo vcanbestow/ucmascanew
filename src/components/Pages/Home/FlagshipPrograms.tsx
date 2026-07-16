@@ -230,13 +230,13 @@ export default function FlagshipPrograms() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
                                             viewport={{ once: true, amount: 0.2 }}>
-                                            <div className="relative h-full flex items-end justify-center md:min-h-80   ">
+                                            <div className="relative h-full flex items-end justify-center md:min-h-80">
                                                 <Image
                                                     width={600}
                                                     height={800} quality={100}
                                                     src={`${path}/images/${tab.childImage.src}`}
                                                     alt={tab.childImage.alt}
-                                                    className="max-w-full max-h-112 object-contain"
+                                                    className="max-w-full xl:h-112 w-auto"
                                                 />
                                             </div>
                                         </motion.div>

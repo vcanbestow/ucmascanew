@@ -167,7 +167,7 @@ export default function UpcomingWorkshops() {
               grabCursor={true}
               loop={true}
               autoplay={{
-                delay: 3500000,
+                delay: 3500,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
               }}

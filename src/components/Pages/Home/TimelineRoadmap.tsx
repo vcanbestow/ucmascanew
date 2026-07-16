@@ -70,22 +70,34 @@ const timelineData = [
 ];
 
 // Helper to calculate chevron shape for Desktop
+// const getClipPath = (index, totalItems) => {
+//   const arrowWidth = 20; // Adjusted for better fit on all desktop screens without scrolling
+//   if (index === 0) {
+//     return `polygon(0% 0%, calc(100% - ${arrowWidth}px) 0%, 100% 50%, calc(100% - ${arrowWidth}px) 100%, 0% 100%)`;
+//   }
+//   if (index === totalItems - 1) {
+//     return `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, ${arrowWidth}px 50%)`;
+//   }
+//   return `polygon(0% 0%, calc(100% - ${arrowWidth}px) 0%, 100% 50%, calc(100% - ${arrowWidth}px) 100%, 0% 100%, ${arrowWidth}px 50%)`;
+// };
 const getClipPath = (index, totalItems) => {
-  const arrowWidth = 20; // Adjusted for better fit on all desktop screens without scrolling
+  const arrowWidth = 1.25; // 20px converted to rem (assuming 1rem = 16px)
+  
   if (index === 0) {
-    return `polygon(0% 0%, calc(100% - ${arrowWidth}px) 0%, 100% 50%, calc(100% - ${arrowWidth}px) 100%, 0% 100%)`;
+    return `polygon(0% 0%, calc(100% - ${arrowWidth}rem) 0%, 100% 50%, calc(100% - ${arrowWidth}rem) 100%, 0% 100%)`;
   }
+  
   if (index === totalItems - 1) {
-    return `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, ${arrowWidth}px 50%)`;
+    return `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, ${arrowWidth}rem 50%)`;
   }
-  return `polygon(0% 0%, calc(100% - ${arrowWidth}px) 0%, 100% 50%, calc(100% - ${arrowWidth}px) 100%, 0% 100%, ${arrowWidth}px 50%)`;
+  
+  return `polygon(0% 0%, calc(100% - ${arrowWidth}rem) 0%, 100% 50%, calc(100% - ${arrowWidth}rem) 100%, 0% 100%, ${arrowWidth}rem 50%)`;
 };
-
 // Component for Desktop View (Horizontal, No Scroll, Fluid Width)
 const DesktopTimelineItem = ({ item, index, totalItems }) => {
   const isTop = item.position === 'top';
   const isBottom = item.position === 'bottom';
-  const marginOffset = index === 0 ? '0px' : '-20px';
+  const marginOffset = index === 0 ? '0rem' : '-1.25rem';
 
   return (
     <div
@@ -98,9 +110,9 @@ const DesktopTimelineItem = ({ item, index, totalItems }) => {
           <>
             <div className="flex flex-col items-center justify-end h-full z-10 transition-transform duration-300 ">
               <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-white shadow-md flex items-center justify-center mb-2 xl:mb-3 overflow-hidden border border-gray-200 relative shrink-0">
-                <Image src={`${path}/images/${item.image}`} alt={item.year} fill className="object-cover" />
+                <Image src={`${path}/images/${item.image}`} alt={item.year} quality={75} fill className="object-cover" />
               </div>
-              <p className="text-[.8rem]  text-section-heading-paragraph leading-snug font-medium  text-center  whitespace-pre-line px-1 xl:px-2">
+              <p className="text-[.8rem] md:text-[.85rem]  text-section-heading-paragraph leading-snug font-medium  text-center  whitespace-pre-line px-1 xl:px-2">
                 {item.description}
               </p>
             </div>
@@ -131,9 +143,9 @@ const DesktopTimelineItem = ({ item, index, totalItems }) => {
             </div>
             <div className="flex flex-col items-center justify-start h-full z-10 transition-transform duration-300   mt-1 xl:mt-2">
               <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden border border-gray-200 mb-2 xl:mb-3 relative shrink-0">
-                <Image  src={`${path}/images/${item.image}`} alt={item.year} fill className="object-cover" />
+                <Image  src={`${path}/images/${item.image}`} alt={item.year} quality={75} fill className="object-cover" />
               </div>
-              <p className="text-[.8rem]  text-section-heading-paragraph leading-snug font-medium  text-center  whitespace-pre-line px-1 xl:px-2">
+              <p className="text-[.8rem] md:text-[.85rem]  text-section-heading-paragraph leading-snug font-medium  text-center  whitespace-pre-line px-1 xl:px-2">
                 {item.description}
               </p>
             </div>
@@ -147,7 +159,7 @@ const DesktopTimelineItem = ({ item, index, totalItems }) => {
 // Component for Mobile View (Vertical Cards with specific image style)
 const MobileTimelineItem = ({ item }) => {
   return (
-    <div className="my-container mx-auto mb-4   flex flex-col  overflow-hidden">
+    <div className=" w-full mx-auto mb-4   flex flex-col  overflow-hidden">
       {/* Header / Year Block with downward triangle */}
       <div
         className="relative w-full py-2 flex justify-center items-center rounded-xl "
@@ -162,9 +174,9 @@ const MobileTimelineItem = ({ item }) => {
       </div>
 
       {/* Content Area */}
-      <div className="flex items-center  gap-2  pt-7 pb-4 ">
+      <div className="flex items-center  gap-2  pt-7  ">
         <div className="w-14 h-14 rounded-full overflow-hidden shadow-sm   relative bg-white flex items-center justify-center border border-gray-200 shrink-0">
-          <Image  src={`${path}/images/${item.image}`} alt={item.year} fill className="object-cover" />
+          <Image  src={`${path}/images/${item.image}`} alt={item.year} quality={75} fill className="object-cover" />
         </div>
         <p className="text-[.95rem]  text-section-heading-paragraph leading-snug font-medium      px-1 xl:px-2">
           {item.description}
@@ -192,7 +204,8 @@ export default function TimelineRoadmap() {
         </div>
 
         {/* --- MOBILE & TABLET VIEW (Vertical Stacked Cards) --- */}
-        <div className="flex lg:hidden flex-col w-full py-4">
+        {/* <div className="flex flex-col w-full py-4"> */}
+        <div className="my-container grid grid-cols-1 gap-x-8 gap-y-5 md:grid-cols-2 lg:hidden!  w-full py-4">
           {timelineData.map((item) => (
             <MobileTimelineItem key={item.id} item={item} />
           ))}
