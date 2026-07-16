@@ -2,7 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 import { path } from "@/utils/path";
 
-const timelineData = [
+// 1. Define the TypeScript interface for your data
+interface TimelineItemData {
+  id: string;
+  year: string;
+  description: string;
+  image: string;
+  position: 'top' | 'bottom';
+  color: string;
+}
+
+const timelineData: TimelineItemData[] = [
   {
     id: '1993',
     year: '1993',
@@ -69,18 +79,8 @@ const timelineData = [
   },
 ];
 
-// Helper to calculate chevron shape for Desktop
-// const getClipPath = (index, totalItems) => {
-//   const arrowWidth = 20; // Adjusted for better fit on all desktop screens without scrolling
-//   if (index === 0) {
-//     return `polygon(0% 0%, calc(100% - ${arrowWidth}px) 0%, 100% 50%, calc(100% - ${arrowWidth}px) 100%, 0% 100%)`;
-//   }
-//   if (index === totalItems - 1) {
-//     return `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, ${arrowWidth}px 50%)`;
-//   }
-//   return `polygon(0% 0%, calc(100% - ${arrowWidth}px) 0%, 100% 50%, calc(100% - ${arrowWidth}px) 100%, 0% 100%, ${arrowWidth}px 50%)`;
-// };
-const getClipPath = (index, totalItems) => {
+// 2. Add type annotations ( : number ) to the parameters
+const getClipPath = (index: number, totalItems: number) => {
   const arrowWidth = 1.25; // 20px converted to rem (assuming 1rem = 16px)
   
   if (index === 0) {
@@ -93,8 +93,15 @@ const getClipPath = (index, totalItems) => {
   
   return `polygon(0% 0%, calc(100% - ${arrowWidth}rem) 0%, 100% 50%, calc(100% - ${arrowWidth}rem) 100%, 0% 100%, ${arrowWidth}rem 50%)`;
 };
-// Component for Desktop View (Horizontal, No Scroll, Fluid Width)
-const DesktopTimelineItem = ({ item, index, totalItems }) => {
+
+// 3. Create an interface for the Desktop props
+interface DesktopTimelineItemProps {
+  item: TimelineItemData;
+  index: number;
+  totalItems: number;
+}
+
+const DesktopTimelineItem = ({ item, index, totalItems }: DesktopTimelineItemProps) => {
   const isTop = item.position === 'top';
   const isBottom = item.position === 'bottom';
   const marginOffset = index === 0 ? '0rem' : '-1.25rem';
@@ -156,8 +163,12 @@ const DesktopTimelineItem = ({ item, index, totalItems }) => {
   );
 };
 
-// Component for Mobile View (Vertical Cards with specific image style)
-const MobileTimelineItem = ({ item }) => {
+// 4. Create an interface for the Mobile props
+interface MobileTimelineItemProps {
+  item: TimelineItemData;
+}
+
+const MobileTimelineItem = ({ item }: MobileTimelineItemProps) => {
   return (
     <div className=" w-full mx-auto mb-4   flex flex-col  overflow-hidden">
       {/* Header / Year Block with downward triangle */}
@@ -204,7 +215,6 @@ export default function TimelineRoadmap() {
         </div>
 
         {/* --- MOBILE & TABLET VIEW (Vertical Stacked Cards) --- */}
-        {/* <div className="flex flex-col w-full py-4"> */}
         <div className="my-container grid grid-cols-1 gap-x-8 gap-y-5 md:grid-cols-2 lg:hidden!  w-full py-4">
           {timelineData.map((item) => (
             <MobileTimelineItem key={item.id} item={item} />
@@ -214,4 +224,4 @@ export default function TimelineRoadmap() {
       </div>
     </div>
   );
-}
+} 
