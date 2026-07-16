@@ -133,7 +133,12 @@ export default function FlagshipPrograms() {
 
 
                 {/* Desktop Navigation Tabs */}
-                <div className="hidden md:flex justify-center items-center gap-4 mb-10">
+                <motion.div className="hidden md:flex justify-center items-center gap-4 mb-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 2 }}
+                    viewport={{ once: true }}
+                >
                     {PROGRAM_DATA.map((tab, index) => {
                         const isActive = activeTab === index;
                         return (
@@ -149,7 +154,7 @@ export default function FlagshipPrograms() {
                             </button>
                         );
                     })}
-                </div>
+                </motion.div>
 
                 {/* Content & Mobile Accordion Container */}
                 <div className="  mt-8 md:mt-0 space-y-4 md:space-y-0">
@@ -161,6 +166,7 @@ export default function FlagshipPrograms() {
 
                                 {/* Mobile Accordion Trigger Button */}
                                 <button
+
                                     onClick={() => handleTabClick(index, true)}
                                     className={`w-full flex md:hidden justify-between items-center py-4 px-5 rounded-xl text-left font-bold text-lg transition-all duration-300 ${isOpen
                                         ? "bg-orange-bg text-white border border-orange-bg shadow-[0_0.25rem_0.9375rem_rgba(255,107,53,0.4)]"
@@ -271,7 +277,12 @@ export default function FlagshipPrograms() {
                     })}
                 </div>
             </div>
-            <div className="py-5 mt-5 md:mt-0 bg-[#EDEAE6]"></div>
+            <motion.div className="py-5 mt-5 md:mt-0 bg-[#EDEAE6]"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 2 }}
+                viewport={{ once: true }}
+            ></motion.div>
         </section>
     );
 }

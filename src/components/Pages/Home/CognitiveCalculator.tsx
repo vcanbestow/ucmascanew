@@ -66,33 +66,53 @@ export default function CognitiveCalculator() {
             lineColor="#1e2e54"
           /> */}
           <SectionTitle
+            className="mb-10 lg:mb-10!"
             ParaclassName="md:max-w-4/5 mx-auto"
             titleTop={<>Not Just Tutoring.</>}
             titleBottom=""
             highlightText={<>A Proven <br className="hidden lg:block" />Brain Development Program</>}
             subtitle={[
               <>
-                When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.
-                <br />
-                <br />
-                Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.
+
               </>
             ]}
             titleColor="text-ucmas-blue"
             highlightColor="text-ucmas-sky"
-            subtitleColor="text-section-heading-paragraph lg:columns-2 gap-10 text-center lg:text-justify leading-[1.8]"
+            subtitleColor="text-section-heading-paragraph  text-center   leading-[1.8]"
             lineColor="#1e2e54"
           />
+          <div className="md:max-w-4/6 mx-auto">
+            <div className="w-full text-center mt-4 " >
+              <motion.div className="text-base font-normal tracking-[-0.01em]  text-section-heading-paragraph  text-center   leading-[1.8]"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 2 }}
+                viewport={{ once: true }}
+              >
+                <p className="block mb-2">When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.</p>
+
+                <p className="block ">Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.</p>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
-         {/* <div>
+        <motion.div initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}
+              viewport={{ once: true }}>
           <TimelineRoadmap />
-         </div> */}
+        </motion.div>
 
 
         <div className="my-container  grid grid-cols-12 relative mt-6 lg:mt-10">
           <div className="relative lg:col-start-3 col-span-12 lg:col-span-8">
-            <div className="relative flex flex-col md:flex-row min-h-95 bg-calculator-dark-blue rounded-tl-4xl rounded-tr-3xl p-8 md:p-12 lg:p-10 shadow-[0_.625rem_1.875rem_rgba(0,0,0,0.25)] z-10">
+            <motion.div className="relative flex flex-col md:flex-row min-h-95 bg-calculator-dark-blue rounded-tl-4xl rounded-tr-3xl p-8 md:p-12 lg:p-10 shadow-[0_.625rem_1.875rem_rgba(0,0,0,0.25)] z-10"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}
+              viewport={{ once: true }}
+            >
 
               {/* Left Side Kid Image - Absolute Outside Left */}
               <div className="absolute -left-11.25 lg:-left-25 xl:-left-22 2xl:-left-21.25 bottom-6 h-[75%] max-h-70 md:max-h-85 4xl:left-[-5.35rem] z-25 pointer-events-none hidden lg:block">
@@ -269,10 +289,10 @@ export default function CognitiveCalculator() {
                   />
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }

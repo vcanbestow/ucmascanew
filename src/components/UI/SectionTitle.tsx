@@ -27,15 +27,15 @@ export default function SectionHeading({
     lineColor = '#1e2e54',
     className = '',
     ParaclassName = '',
-}: SectionHeadingProps) {  
+}: SectionHeadingProps) {
     return (
         <>
             <div className="my-container  ">
-                <div className={`${className} mb-10 lg:mb-18`}> 
+                <div className={`${className} mb-10 lg:mb-18`}>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 3, ease: [0.16, 1, 0.3, 1] }}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 2,  ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
                         className="md:flex gap-3 xl:gap-10 items-center justify-center w-full mx-auto"
                     >
@@ -90,7 +90,7 @@ export default function SectionHeading({
                             />
                         </div>
                     </motion.div>
- 
+
                     {subtitle && (
                         <div className={ParaclassName}>
                             <motion.div
@@ -102,7 +102,7 @@ export default function SectionHeading({
                             >
                                 {Array.isArray(subtitle) ? (
                                     subtitle.map((text, index) => (
-                                        <div // p की जगह div यूज़ किया ताकि अंदर <br> या block elements एरर न दें
+                                        <div
                                             key={index}
                                             className={`text-base font-normal tracking-[-0.01em] ${index > 0 ? "mt-2" : ""
                                                 } ${subtitleColor}`}

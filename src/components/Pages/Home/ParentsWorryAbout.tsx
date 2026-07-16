@@ -724,7 +724,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
               return (
                 <div
                   key={i}
-                  className={`flex items-start gap-4 max-w-full ${getColorProps(content.featureTextColor).className}`}
+                  className={`flex items-center gap-4 max-w-full ${getColorProps(content.featureTextColor).className}`}
                   style={getColorProps(content.featureTextColor).style}
                 >
                   {/* Border Box Wrapper - Yeh wrapper aapke custom icon ko border ke sath contain karega */}

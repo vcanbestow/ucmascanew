@@ -1,5 +1,5 @@
 'use client';
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import React, { useEffect, useState, useRef } from 'react';
 
 // Props का इंटरफ़ेस डिफाइन करें
@@ -120,7 +120,7 @@ export default function StatsSlider() {
                         {[...statsData, ...statsData].map((stat, index) => (
                             <div
                                 key={index}
-                                className="flex justify-center items-center px-4 sm:px-8 lg:px-10"
+                                className="flex justify-center items-center px-4 sm:px-8 lg:px-8"
                             >
                                 <div className="flex items-center text-left">
                                     <div className="flex items-baseline select-none">
