@@ -114,7 +114,7 @@ export default function FlagshipPrograms() {
     };
 
     return (
-        <section className="bg-white !pb-0 pt-16 px-4 sm:px-8 md:px-12 lg:px-20 ">
+        <section className="bg-white pb-0! pt-16 px-4 sm:px-8 md:px-12 lg:px-20 ">
             <SectionTitle
                 ParaclassName="xl:max-w-7/12 mx-auto"
                 titleTop={<>Our Flagship</>}

@@ -18,8 +18,8 @@ export default function ThankYouPage() {
     <div className="w-full min-h-[85vh] bg-white text-slate-800 flex items-center justify-center relative overflow-hidden px-4 py-20 selection:bg-amber-500 selection:text-white antialiased">
       
       {/* Premium Cinematic Mesh Gradients (These still look stunning on a white canvas) */}
-      <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-amber-400/20 via-orange-400/10 to-transparent blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-ucmas-sky/20 via-blue-400/10 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-10%] w-150 h-150 rounded-full bg-linear-to-br from-amber-400/20 via-orange-400/10 to-transparent blur-[7.5rem] pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-150 h-150 rounded-full bg-linear-to-tl from-ucmas-sky/20 via-blue-400/10 to-transparent blur-[7.5rem] pointer-events-none" />
 
       {/* Main Container Core Box (Slightly darker slate background so the card pops on the white page) */}
       <motion.div 
@@ -35,7 +35,7 @@ export default function ThankYouPage() {
             initial={{ scale: 0.3, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
-            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-md shadow-emerald-500/10 flex items-center justify-center relative z-10"
+            className="w-16 h-16 rounded-2xl bg-linear-to-br from-emerald-500 to-teal-600 shadow-md shadow-emerald-500/10 flex items-center justify-center relative z-10"
           >
             <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
               <motion.path
@@ -62,7 +62,7 @@ export default function ThankYouPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-widest text-amber-600 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20"
+            className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-amber-600 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20"
           >
             <Sparkles className="w-3.5 h-3.5 text-orange-500" /> Dispatch Successful
           </motion.span>
@@ -93,7 +93,7 @@ export default function ThankYouPage() {
           transition={{ delay: 0.5, duration: 0.4 }}
           className="bg-white border border-slate-200/80 rounded-2xl p-5 text-left flex items-start gap-4 shadow-sm"
         >
-          <div className="p-2.5 rounded-xl bg-slate-50 text-slate-500 border border-slate-200/60 shadow-inner flex-shrink-0">
+          <div className="p-2.5 rounded-xl bg-slate-50 text-slate-500 border border-slate-200/60 shadow-inner shrink-0">
             <Mail className="w-5 h-5" />
           </div>
           <div className="space-y-1">
@@ -132,7 +132,7 @@ export default function ThankYouPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           transition={{ delay: 0.7, duration: 0.4 }}
-          className="pt-4 flex items-center justify-center gap-1.5 text-[10px] font-mono text-slate-400 select-none"
+          className="pt-4 flex items-center justify-center gap-1.5 text-xs font-mono text-slate-400 select-none"
         >
           <span>SECURE TOKEN INITIALIZED</span>
           <span>•</span>

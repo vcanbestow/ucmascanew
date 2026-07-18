@@ -5,6 +5,7 @@ const nextConfig = {
   trailingSlash: true,     // <--- ADD THIS LINE (Fixes the 403 folder issue)
   
   images: {
+    qualities: [75, 100],
     unoptimized: true,    // Static export me images ke liye compulsory hai
     remotePatterns: [
       {

@@ -808,7 +808,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
             }
             iconPosition="right"
           >
-            <span className="break-words whitespace-normal text-center line-clamp-2 sm:line-clamp-none">
+            <span className="wrap-break-words whitespace-normal text-center line-clamp-2 sm:line-clamp-none">
               {content.button.text}
             </span>
           </Button>
@@ -835,7 +835,7 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="relative rounded-2xl lg:rounded-3xl lg:h-96 lg:min-h-96 overflow-hidden aspect-[4/3] w-full">
+        <div className="relative rounded-2xl lg:rounded-3xl lg:h-96 lg:min-h-96 overflow-hidden aspect-4/3 w-full">
           <Image
             src={activeData.content.video.thumbnail}
             alt="Video"

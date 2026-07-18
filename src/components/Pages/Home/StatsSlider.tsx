@@ -112,7 +112,7 @@ export default function StatsSlider() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="stats-contentsec relative z-2 py-3 lg:py-6 before:absolute before:content-[''] before:h-full before:w-[200%] before:left-1/2 before:top-0 before:-translate-x-1/2 before:rotate-[-2deg] md:before:rotate-[-1deg] before:bg-[linear-gradient(90deg,#218794_0%,#3FA5B1_100%)] after:absolute after:content-[''] after:h-full after:rotate-2 md:after:rotate-1 after:w-[200%] after:left-1/2 after:top-0 after:-translate-x-1/2 after:bg-[linear-gradient(90deg,#fbb03b_0%,#e6761b_100%)]">
+                className="stats-contentsec relative z-2 py-3 lg:py-6 before:absolute before:content-[''] before:h-full before:w-[200%] before:left-1/2 before:top-0 before:-translate-x-1/2 before:-rotate-2 md:before:-rotate-1 before:bg-[linear-gradient(90deg,#218794_0%,#3FA5B1_100%)] after:absolute after:content-[''] after:h-full after:rotate-2 md:after:rotate-1 after:w-[200%] after:left-1/2 after:top-0 after:-translate-x-1/2 after:bg-[linear-gradient(90deg,#fbb03b_0%,#e6761b_100%)]">
 
                 <div className="relative w-full rotate-2 md:rotate-1 px-0 z-20 overflow-hidden group flex">
                     <div className="flex w-max animate-marquee">

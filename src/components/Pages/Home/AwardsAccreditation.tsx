@@ -42,13 +42,13 @@ export default function AwardsAccreditation() {
     }, []);
 
     const statsData = [
-        { image: "Layer 1.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "Layer 2.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "Layer 3.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "Layer 4.webp", year: "2024", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "Layer 5.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "Layer 6.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
-        { image: "Layer 7.webp", year: "2016", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 – 2026)", },
+        { image: "Layer 1.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
+        { image: "Layer 2.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
+        { image: "Layer 3.webp", year: "2026", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
+        { image: "Layer 4.webp", year: "2024", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
+        { image: "Layer 5.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
+        { image: "Layer 6.webp", year: "2020", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
+        { image: "Layer 7.webp", year: "2016", content: "16 Years of Franchisees Choice Excellence Canadian Franchise Association (2011 - 2026)", },
     ];
 
     if (!mounted) return null;

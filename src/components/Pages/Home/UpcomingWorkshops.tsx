@@ -92,7 +92,7 @@ export default function UpcomingWorkshops() {
           highlightColor="text-ucmas-sky"
           subtitleColor="text-section-heading-paragraph"
           lineColor="#1e2e54"
-          className="!mb-0"
+          className="mb-0!"
         />
       </div>
 
@@ -152,7 +152,7 @@ export default function UpcomingWorkshops() {
           </div>
         </div>
 
-        <div className="my-container 3xl:max-w-full lg:!px-2">
+        <div className="my-container 3xl:max-w-full lg:px-2!">
           <motion.div className="w-full"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function UpcomingWorkshops() {
                 992: { slidesPerView: 2 },
                 1280: { slidesPerView: 3 },
               }}
-              className="md:!pb-6 select-none"
+              className="md:pb-6! select-none"
             >
               {workshopData.map((workshop) => (
                 <SwiperSlide key={workshop.id} className="h-auto py-4">
@@ -196,7 +196,7 @@ export default function UpcomingWorkshops() {
                     </div>
 
                     {/* Content Right */}
-                    <div className="flex flex-col justify-between flex-grow  ">
+                    <div className="flex flex-col justify-between grow  ">
                       <div>
                         <h3 className=" text-[1.15rem] font-bold text-ucmas-blue leading-tight lg:line-clamp-2">
                           {workshop.title}
@@ -211,7 +211,7 @@ export default function UpcomingWorkshops() {
                         <div className="flex items-center gap-2">
                           <div className="flex flex-col w-5 h-6 border border-slate-300 rounded-sm overflow-hidden bg-white shrink-0">
                             <span className="bg-red-600 h-1.5 w-full block"></span>
-                            <span className="flex-grow flex items-center justify-center text-[.5625rem] font-bold text-slate-800">
+                            <span className="grow flex items-center justify-center text-[.5625rem] font-bold text-slate-800">
                               {workshop.dayBadge}
                             </span>
                           </div>

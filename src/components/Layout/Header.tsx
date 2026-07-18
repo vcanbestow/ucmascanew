@@ -303,13 +303,13 @@ export default function Header() {
 
             {/* Mobile Action Utility CTAs */}
             <div className="mt-8 space-y-3 shrink-0">
-              <Button variant="header_ucmas_sky_btn" href="#" icon={<MapPin size={17} strokeWidth={2} />} iconPosition="left" className="!w-full font-medium">
+              <Button variant="header_ucmas_sky_btn" href="#" icon={<MapPin size={17} strokeWidth={2} />} iconPosition="left" className="w-full! font-medium">
                 Find Centre
               </Button>
-              <Button variant="header_ucmas_red_btn" href="#" icon={<ArrowRight size={17} strokeWidth={2} />} iconPosition="right" className="!w-full font-medium">
+              <Button variant="header_ucmas_red_btn" href="#" icon={<ArrowRight size={17} strokeWidth={2} />} iconPosition="right" className="w-full! font-medium">
                 Book FREE Trial
               </Button>
-              <Button variant="header_ucmas_white_btn_outline" href="#" icon={<ArrowRight size={17} strokeWidth={2} />} iconPosition="right" className="!w-full font-medium">
+              <Button variant="header_ucmas_white_btn_outline" href="#" icon={<ArrowRight size={17} strokeWidth={2} />} iconPosition="right" className="w-full! font-medium">
                 Register Now
               </Button>
 
