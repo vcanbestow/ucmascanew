@@ -20,7 +20,8 @@ export default function CtaVideoHero() {
     };
 
     return (
-        <motion.div className="relative w-full lg:min-h-56  bg-[url('https://vcantech.in/ucmasnext/images/Banner-18.webp')] overflow-hidden flex flex-col lg:flex-row lg:items-stretch group/hero"
+        // bg-[url('https://vcantech.in/ucmasnext/images/Banner-18.webp')] 
+        <motion.div className="relative w-full lg:min-h-56 bg-(--brand-navy-dark,#0B1A30) overflow-hidden flex flex-col lg:flex-row lg:items-stretch group/hero"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
