@@ -208,7 +208,7 @@ export default function NotFound() {
               </div>
 
               {/* Search Bar */}
-              {/* <div className={`mb-8 transform transition-all duration-1000 ease-out delay-[300ms] ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {/* <div className={`mb-8 transform transition-all duration-1000 ease-out delay-300ms ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <form onSubmit={handleSearch} className="relative max-w-md group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <Search className="h-5 w-5 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />

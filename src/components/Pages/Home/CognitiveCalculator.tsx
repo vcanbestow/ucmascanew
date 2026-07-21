@@ -47,7 +47,7 @@ export default function CognitiveCalculator() {
 
   return (
     <>
-      <section className="CognitiveCalculator !pb-0">
+      <section className="CognitiveCalculator pb-0!">
         {/* Top Header Section Content Title */}
         <div className=''>
           {/* SectionTitle implementation example */}

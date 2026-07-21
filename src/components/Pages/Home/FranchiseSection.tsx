@@ -297,7 +297,7 @@ export default function FranchiseSection() {
                                 href="#"
                                 icon={<MoveRight size={20} strokeWidth={2} />}
                                 iconPosition="right"
-                                className=" !py-1  font-semibold"
+                                className=" py-1!  font-semibold"
                             >
                                 Book 1:1 Business Consultation
                             </Button>
