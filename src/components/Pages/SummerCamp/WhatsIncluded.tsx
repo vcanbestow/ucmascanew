@@ -69,7 +69,7 @@ export default function WhatsIncluded() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             transition={{
                                                 duration: customDuration,
-                                                delay: staggeredDelay,
+                                                delay: staggeredDelay, 
                                                 ease: [0.16, 1, 0.3, 1]
                                             }}
                                             viewport={{ once: true, amount: 0.1 }}
