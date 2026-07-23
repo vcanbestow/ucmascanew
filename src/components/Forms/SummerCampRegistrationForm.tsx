@@ -204,7 +204,7 @@ export default function SummerCampRegistrationForm() {
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
-          <input type="text" name="childName" placeholder="Child Name" maxLength={100} value={formData.childName} onChange={handleChange} className={`w-full border rounded-md px-3 py-2 focus:outline-none ${errors.childName ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
+          <input type="text" name="childName" placeholder="Child Name" maxLength={100} value={formData.childName} onChange={handleChange} className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none ${errors.childName ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
           {errors.childName && <p className="text-red-500 text-xs mt-1">{errors.childName}</p>}
         </div>
 
@@ -216,13 +216,13 @@ export default function SummerCampRegistrationForm() {
             value={formData.childAge} 
             onChange={handleChange} 
             maxLength={2} 
-            className={`w-full border rounded-md px-3 py-2 focus:outline-none ${errors.childAge ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} 
+            className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none ${errors.childAge ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} 
           />
           {errors.childAge && <p className="text-red-500 text-xs mt-1">{errors.childAge}</p>}
         </div>
 
         <div>
-          <input type="text" name="parentName" placeholder="Parent Name" maxLength={100} value={formData.parentName} onChange={handleChange} className={`w-full border rounded-md px-3 py-2 focus:outline-none ${errors.parentName ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
+          <input type="text" name="parentName" placeholder="Parent Name" maxLength={100} value={formData.parentName} onChange={handleChange} className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none ${errors.parentName ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
           {errors.parentName && <p className="text-red-500 text-xs mt-1">{errors.parentName}</p>}
         </div>
 
@@ -308,24 +308,24 @@ export default function SummerCampRegistrationForm() {
           </div>
 
           <div>
-            <input type="email" name="email" placeholder="Email id" maxLength={100} value={formData.email} onChange={handleChange} className={`w-full border rounded-md px-3 py-2 focus:outline-none ${errors.email ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
+            <input type="email" name="email" placeholder="Email id" maxLength={100} value={formData.email} onChange={handleChange} className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none ${errors.email ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <input type="text" name="city" placeholder="City" maxLength={100} value={formData.city} onChange={handleChange} className={`w-full border rounded-md px-3 py-2 focus:outline-none ${errors.city ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
+            <input type="text" name="city" placeholder="City" maxLength={100} value={formData.city} onChange={handleChange} className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none ${errors.city ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
             {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
           </div>
           <div>
-            <input type="text" name="postalCode" placeholder="Postal Code" value={formData.postalCode} onChange={handleChange} className={`w-full border rounded-md px-3 py-2 focus:outline-none ${errors.postalCode ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
+            <input type="text" name="postalCode" placeholder="Postal Code" value={formData.postalCode} onChange={handleChange} className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none ${errors.postalCode ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`} />
             {errors.postalCode && <p className="text-red-500 text-xs mt-1">{errors.postalCode}</p>}
           </div>
         </div>
 
         <div>
-          <select name="workshop" value={formData.workshop} onChange={handleChange} className={`w-full border rounded-md px-3 py-2 focus:outline-none text-gray-600 ${errors.workshop ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`}>
+          <select name="workshop" value={formData.workshop} onChange={handleChange} className={`w-full border rounded-md font-base px-3 py-2 focus:outline-none text-gray-600 ${errors.workshop ? 'border-red-500' : 'border-gray-300 focus:border-ucmas-orange'}`}>
             <option value="">Select Workshops</option>
             <option value="abacus">Abacus Math</option>
             <option value="robotics">Robotics & Coding</option>
