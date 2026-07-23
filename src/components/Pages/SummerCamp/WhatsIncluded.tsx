@@ -73,7 +73,9 @@ export default function WhatsIncluded() {
                                                 ease: [0.16, 1, 0.3, 1]
                                             }}
                                             viewport={{ once: true, amount: 0.1 }}
-                                            className="w-full  hover:-translate-y-1.5 transition-all shrink-0 border border-ucmas-orange bg-white rounded-xl p-4 py-6 text-center shadow-lg shadow-ucmas-red/20 hover:bg-gray-100 "
+                                           
+                                            // 
+                                            className="w-full   transition-all hover:scale-[1.035] origin-bottom hover:-translate-y-1.5 hover:bg-gray-100  shrink-0 border border-ucmas-orange bg-white rounded-xl p-4 py-6 text-center shadow-lg shadow-ucmas-red/20  "
                                         >
                                             {/* Agar aapko Icon aur Image dono chahiye */}
                                             {/* {card.icon} */}

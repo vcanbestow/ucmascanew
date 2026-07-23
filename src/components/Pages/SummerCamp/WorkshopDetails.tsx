@@ -86,7 +86,7 @@ export default function WorkshopDetails() {
                                     iconPosition="right"
                                     className="mx-auto"
                                 >
-                                    View All Events
+                                    Register Today
                                 </Button>
                             </motion.div>
                         </div>

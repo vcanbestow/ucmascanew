@@ -110,7 +110,9 @@
         /* Intentionally blank if handling manually */
     }
 }
-
+::selection{
+    background-color: var(--color-ucmas-blue);
+}
 body {
     background-color: white !important;
 }
