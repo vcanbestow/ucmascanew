@@ -81,26 +81,28 @@ export default function CognitiveCalculator() {
             subtitleColor="text-section-heading-paragraph  text-center   leading-[1.8]"
             lineColor="#1e2e54"
           />
-          <div className="md:max-w-4/6 mx-auto">
-            <div className="w-full text-center mt-4 " >
-              <motion.div className="text-base font-normal tracking-[-0.01em]  text-section-heading-paragraph  text-center   leading-[1.8]"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2 }}
-                viewport={{ once: true }}
-              >
-                <p className="block mb-2">When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.</p>
+          <div className="my-container">
+            <div className="md:max-w-4/6 mx-auto">
+              <div className="w-full text-center mt-4 " >
+                <motion.div className="text-base font-normal tracking-[-0.01em]  text-section-heading-paragraph  text-center   leading-[1.8]"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 2 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="block mb-2">When it comes to afterschool classes for kids, as a parent, you want to choose only the best, result-oriented program for your child. That's exactly why parents across Canada choose UCMAS.</p>
 
-                <p className="block mb-6">Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.</p>
-              </motion.div>
+                  <p className="block mb-6">Since its inception, the UCMAS Abacus and Mental Math program has helped kids aged 5 to 13 build minds that are sharper, faster, and ready for anything. Founded in Malaysia, the program has grown into one of the world's most trusted child development programs, one that builds transferable skills like focus, memory, and problem-solving skills your child can carry into every subject, every challenge, and every stage of life.</p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
 
         <motion.div initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2 }}
-              viewport={{ once: true }}>
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2 }}
+          viewport={{ once: true }}>
           <TimelineRoadmap />
         </motion.div>
 

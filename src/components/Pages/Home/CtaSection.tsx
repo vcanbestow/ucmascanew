@@ -76,12 +76,7 @@ export default function CtaVideoHero() {
                 </div>
             </motion.div>
 
-            {/* ========================================= */}
-            {/* 3. RIGHT CTA PANEL                        */}
-            {/* Replaces .right-cta-panel               */}
-            {/* ========================================= */}
-            {/* <div className="w-full lg:w-[50%] lg:ml-auto px-6 xl:pl-26 py-10  lg:pr-12 lg:pl-12 bg-linear-to-br from-[var(--brand-navy,#0A1A44)] to-[var(--brand-navy-dark,#0B1A30)] lg:bg-none relative z-30 flex flex-col justify-center items-center lg:items-start text-center lg:text-left"> */}
-            <div
+              <div
                 className="w-full lg:w-[50%] lg:ml-auto px-6 xl:pl-26 py-10 lg:pr-12 lg:pl-12 relative z-30 flex flex-col justify-center items-center lg:items-start text-center lg:text-left bg-cover bg-center bg-no-repeat"
 
             >

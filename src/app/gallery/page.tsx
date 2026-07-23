@@ -74,7 +74,7 @@ const GALLERY_IMAGES = [
   },
 ];
 
-export default function AdvancedMegaGallery() {
+export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 

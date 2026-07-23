@@ -440,6 +440,7 @@ export default function DynamicTabSection() {
     <div className="bg-parentproblem-bg-section  flex flex-col items-center">
       <section className="">
         <SectionTitle
+        as="h1"
           ParaclassName="md:max-w-4/5 mx-auto"
           titleTop={
             <>
@@ -669,11 +670,11 @@ function ContentArea({ activeData, setIsVideoModalOpen }: ContentAreaProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12  gap-8 md:gap-12 items-center"
-     >
+    >
       <motion.div initial={{ opacity: 0, x: -60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-      viewport={{ once: true, amount: 0.2 }} className="col-span-1 lg:col-span-7">
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, amount: 0.2 }} className="col-span-1 lg:col-span-7">
         <div className="  lg:mb-14 mb-6">
           <h2 className=" mb-3 text-2xl md:text-3xl font-extrabold leading-tight">
             <span {...getColorProps(content.headingPart1Color)}>

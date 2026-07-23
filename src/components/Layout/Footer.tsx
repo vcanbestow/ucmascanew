@@ -1,12 +1,24 @@
+'use client';
+import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import Image from 'next/image';
 import { path } from "@/utils/path";
 
 export default function Footer() {
+    const pathname = usePathname();
+
+    // Route ke hisaab se background colors map karein
+    const bgMap: Record<string, string> = {
+        '/summer-camp/': 'bg-pagebg', // Summer camp page
+        '/about': 'bg-gray-100', // About page
+        // Yahan aur pages add kar sakte hain
+    };
+    const topCurveBg = bgMap[pathname] || 'bg-white';
     return (
         <footer className="bg-footer-bg relative text-gray-300       ">
 
-            <div className="w-full h-12 sm:h-16 md:h-24 bg-white rounded-b-[2.5rem] sm:rounded-b-[3.75rem] md:rounded-b-[5rem]"></div>
+            {/* <div className="w-full h-12 sm:h-16 md:h-24 bg-white rounded-b-[2.5rem] sm:rounded-b-[3.75rem] md:rounded-b-[5rem]"></div> */}
+            <div className={`w-full h-12 sm:h-16 md:h-24 ${topCurveBg} rounded-b-[2.5rem] sm:rounded-b-[3.75rem] md:rounded-b-[5rem]`}></div>
             <div className="  pb-8 pt-12 ">
                 <div className="my-container grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
