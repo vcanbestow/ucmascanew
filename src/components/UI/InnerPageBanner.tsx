@@ -1,6 +1,21 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
+// 1. Define the types for all your props
+interface InnerPageBannerProps {
+  imageDesktop: string | StaticImageData;
+  imageMobile: string | StaticImageData;
+  alt: string;
+  link?: string;
+  width?: number;
+  height?: number;
+  fill?: boolean;
+  priority?: boolean;
+  className?: string;
+  containerClassName?: string;
+}
+
+// 2. Assign the interface to your component props
 export default function InnerPageBanner({
   imageDesktop,
   imageMobile,
@@ -12,7 +27,7 @@ export default function InnerPageBanner({
   priority = false,
   className = '',
   containerClassName = '',
-}) {
+}: InnerPageBannerProps) {
 
   const imageContent = (
     <div className={`overflow-hidden ${fill ? 'relative w-full h-full' : ''} ${containerClassName}`}>
